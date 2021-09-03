@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            margin-bottom: 200px;
+        }
+        h3{
+            text-align: center;
+        }
+        audio,video{
+            margin-left:40%
+        }
+        mark {
+         background: #ffec82;
+         border: 5px double #333;
+         border-radius: 25px;
+        }
+       </style>
+</head>
+<body>
+    <h1>Я, <mark>Борозда Андрей Сергеевич</mark>, изучаю HTML5</h1>
+    <h3>Зацени балдежный музон</h3>
+    <audio src="lets go.m4a" controls="controls"> </audio>
+    <h3>А теперь поговорим немного о боли</h3>
+    <video src="pain.mp4" width="300" height="200" controls="controls"></video>
+    <p>Я знаю где ты находишься, загляни в консоль:)</p>
+   
+    <script>
+    navigator.geolocation.getCurrentPosition(function(position) {
+    console.log(`Широта:${position.coords.latitude} Долгота:${position.coords.longitude}`);
+});
+    </script>
+</body>
+</html>

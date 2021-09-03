@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+<form class="anketa" name="blank" action="" >
+<fieldset>
+    <textarea  cols="20" rows="4" name="fac">
+        Название факультета
+    </textarea><br />
+<br /> <input type='text' name='surname' value="Фамилия" /><br />
+<input type='text' name='firstname' value="Имя" /><br />
+Специальность:
+<select class="list">
+<option>    </option>
+<option>ИСиТ</option>
+<option>ПОИТ</option>
+<option>ПОиМБС</option>
+<option>ДЭВИ</option>
+</select>
+<p>Курс</p>
+<input type='radio' name='year' value='1' /> 1
+<input type='radio' name='year' value='2' /> 2
+<input type='radio' name='year' value='3' /> 3
+<input type='radio' name='year' value='4' /> 4
+<p>Предметы</p>
+<input class="check" type='checkbox' name='exam1' value='ОИТ' /> 
+ОИТ
+<input class="check" type='checkbox' name='exam2' value='ОАП' /> 
+ОАП 
+<input class="check" type='checkbox' name='exam3' value='История' /> 
+История 
+<input class="check" type='checkbox' name='exam4' value='Физика' /> 
+Физика 
+<input class="check" type='checkbox' name='exam5' value='Математика' /> 
+Математика <br /><br />
+<input type="submit" value="Submit" id="send-form">
+<input type='reset' name='res' value='Reset' ><br /><br />
+<input type='button' name='newForm' value='List of exams' onclick='NewForm()'>
+<input type='button' name='Print' value='Print' onclick='printer()'><br />
+</fieldset>
+</form>
+
+    <script type="text/javascript" src="alg.js"></script> 
+</body>
+</html>

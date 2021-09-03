@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Я, <mark>Борозда Андрей Сергеевич</mark>, изучаю HTML5</h1>
+    </header>
+<div class="main">   
+  
+
+    <form class="anketa" name="blank" action="/" >
+
+        <fieldset>
+            <legend>Новая форма в HTML-5</legend>
+            <div>
+                <div class="item">
+                    <label for="name">Имя: </label>
+                    <input id="name" type="text" required>
+                </div>
+                <div class="item">
+                    <label for="surname">Фамилия: </label>
+                    <input id="surname" type="text">
+                </div>
+                <div class="item">
+                    <label for="email">Email: </label>
+                    <input id="email" type="email" placeholder="example@gmail.com" required>
+                </div>
+                <div class="item">
+                    <label for="tel">Телефон: </label>
+                    <input id="tel" type="tel" required pattern="[+]375[0-9]{9}" placeholder="+375-29-123-45-67">
+                </div>
+                <div class="item">
+                    Курс:
+                    <div>
+                        <label for="1">1</label>
+                        <input id="1" name="radio" type="radio" value="1">
+                        <label for="2">2</label>
+                        <input id="2" name="radio" type="radio" value="2">
+                        <label for="3">3</label>
+                        <input id="3" name="radio" type="radio" value="3">
+                        <label for="4">4</label>
+                        <input id="4" name="radio" type="radio" value="4">
+                    </div>
+                </div>
+                <div class="item">
+                    <label for="group">Группа: </label>
+                    <input id="group" type="number" value="1" min="1" max="11">
+                </div>
+                <div class="item">
+                    <input type="url"placeholder="https://example.com" pattern="https://.*" >
+                </div>
+                
+                <div class="item">
+                    <input type="color">
+                </div>
+
+                
+                <button type="button">Отправить</button>
+
+                <div class="item">
+                    <label for="ice-cream-choice">Choose a flavor:</label>
+                    <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+                    <datalist id="ice-cream-flavors">
+                        <option value="Chocolate">
+                        <option value="Coconut">
+                        <option value="Mint">
+                        <option value="Strawberry">
+                        <option value="Vanilla">
+                    </datalist>
+                </div>
+            </div>
+        
+
+        </fieldset>
+    </form>
+    <nav class="anketa">
+        <figure>
+        <img src="zenitsu.jpg" width="250px" height="350">
+        <figcaption>Здесь мог быть нав бар, но это просто фоточка</figcaption>
+    </figure>
+    </nav>
+</div>
+<footer>
+
+</footer>
+
+    <script type="text/javascript" src="alg.js"></script> 
+</body>
+</html>

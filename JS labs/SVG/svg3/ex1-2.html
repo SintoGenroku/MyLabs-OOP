@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        text{
+            stroke: darkred;
+        }
+        tspan{
+            stroke:darkblue;
+        }
+    </style>
+</head>
+<body>
+    
+    <svg width="1400" height="900" >
+        <defs>
+            
+            <path fill="red" stroke="darkblue" id="my_path" d="M 200,320 C 260,400 320,400 380,320"/>   
+        </defs>
+        <text x="25" y="25" text-decoration="underline" word-spacing="7 ">Текст внутри тега text</text>
+        <text>
+            <tspan style="font-family: Arial; writing-mode: tb;" x="50" y="50"> Текст внутри тега tspan</tspan>
+        </text>
+        <text transform="rotate(50 240, 70)">
+            <tspan style="font-style: italic; font-size: 35px" x="50" y="50" dx="160" dy="15"> Еще один текст внутри тега tspan</tspan>
+        </text>
+        <text >
+            <textPath xlink:href="#my_path">Текст внутри тега textPath</textPath>
+        </text>
+    </svg>
+</body>
+</html>

@@ -1,0 +1,8 @@
+.knopka{
+    background-color: aquamarine;
+    font-size:x-large;
+    font-family: 'Courier New', Courier, monospace;
+    display:flex;
+    flex-direction: column;
+    margin: 25px 0px;
+}

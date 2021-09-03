@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <svg width="1400" height="900" >
+        <defs>
+            <pattern id="diagonalHatch" patternUnits="userSpaceOnUse" width="4" height="4">
+                <path d="M-1,1 l2,-2
+                         M0,4 l4,-4
+                         M3,5 l2,-2" 
+                      style="stroke:black; stroke-width:1" />
+              </pattern>
+
+            <pattern id="star"  width="7%" height="7%">
+              <polygon points="0,0 1,3 0,8 3,5 8,8 5,3 8,0 3,1"/>
+            </pattern>
+          </defs>
+        <text x="75" y="100" font-size="125" fill="url(#diagonalHatch)" stroke="black" stroke-width="1">Текст внутри тега text</text>
+       
+        <rect x="175" y="175" width='150' height='150' fill=url(#star)></rect>
+    </svg>
+</body>
+</html>

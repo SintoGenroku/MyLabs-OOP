@@ -1,0 +1,89 @@
+*{
+    margin: 0;  
+}
+a{
+    text-decoration:none;
+}
+p:first-child
+{
+    margin: 20px 0px 0px 0px; 
+    text-align: center;
+    color:Crimson;
+    font-size: 25px;
+    font-family: Ravie;
+}
+h2:first-child
+{
+    margin: 20px 0px 0px 0px; 
+    text-align: center;
+    color:Crimson;
+    font-size: 25px;
+    font-family: Ravie;
+}
+.header{
+    
+    background-color:powderblue;
+    width:100%;
+    height:10vh;
+}
+.main {
+    background-color: LightGreen;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+       
+}
+.list{
+    background-color: silver;
+    margin-top: 0%; 
+    display: flex;
+    flex-direction: column;
+}
+.text{
+            margin: 10px 10px 0px 10px;
+            flex: 0 0 70%;
+            max-width: 1800px;
+            ;
+}
+.footer{
+        background-color:powderblue;
+        width:100%;
+        height:10vh;
+        
+}
+.img {
+    float: left;
+    margin: 7px 7px 7px 0;
+    
+}
+@media screen and (max-width: 1000px)
+{
+    .main {
+        flex-direction: column !important;
+        }
+    .list{
+        order:3;
+        width: 100%;
+        flex-direction: column !important;
+    }
+    .text{
+        order:2 !important;
+        width: 100%;
+        flex-direction: column !important;
+    }
+    .img{
+        order:1 !important;
+        flex-direction: column !important;
+        width: 250px;
+        height: 250px;
+    }
+    .header{
+        display:none;
+    }
+    .footer{
+        display:none;
+    }
+}
+/*At-правило @media в CSS связывает набор операторов, 
+ограниченных фигурными скобками, в CSS блок, применяется
+при соблюдении условия одного или нескольких медиазапросов.*/

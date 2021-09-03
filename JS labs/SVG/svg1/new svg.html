@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <svg width="1400" height="900">
+        <style>
+            .col1{fill: #F35C78;
+                  stroke:#6A5ACD;
+                  stroke-width:3px;
+                }
+            .col2{fill: #E77D6D;}
+            .col3{fill: #D99B64;}
+            .col4{fill: #6A5ACD;}
+            .col5{fill: #4682B4;}
+        </style>
+       <defs>
+        <path id="camera" d="M29.688 59.375c0 11.218 9.094 20.313 20.313 20.313s20.313-9.094 20.313-20.313-9.094-20.313-20.313-20.313-20.313 9.094-20.313 20.313zM93.75 25h-21.875c-1.563-6.25-3.125-12.5-9.375-12.5h-25c-6.25 0-7.813 6.25-9.375 12.5h-21.875c-3.438 0-6.25 2.813-6.25 6.25v56.25c0 3.438 2.813 6.25 6.25 6.25h87.5c3.438 0 6.25-2.813 6.25-6.25v-56.25c0-3.438-2.813-6.25-6.25-6.25zM50 87.109c-15.317 0-27.734-12.417-27.734-27.734 0-15.317 12.417-27.734 27.734-27.734 15.318 0 27.734 12.417 27.734 27.734 0 15.318-12.417 27.734-27.734 27.734zM93.75 43.75h-12.5v-6.25h12.5v6.25z"/>
+       </defs>
+        <use xlink:href="#camera" class="col1" x="20" y="10" transform="rotate(35 72 69)"/>  
+        <use xlink:href="#camera" opacity="0.4" class="col1" x="20" y="10" />        
+
+        <use xlink:href="#camera" class="col2" x="240" y="280" transform='skewY(15)'/>
+        <use xlink:href="#camera" opacity="0.4" class="col2" x="240" y="280" />
+                
+        <use xlink:href="#camera" class="col3" x="580" y="10" transform="translate(30)"/>
+        <use xlink:href="#camera" opacity="0.4" class="col3" x="580" y="10" />
+                
+        <use xlink:href="#camera" class="col4" x="110" y="110" transform="rotate(-55 162 169)"/>
+        <use xlink:href="#camera" opacity="0.4" class="col4" x="110" y="110" />
+                
+        <use xlink:href="#camera" class="col5" x="150" y="10"  transform="scale(2 2)"/>
+    </svg>
+</body>
+</html>

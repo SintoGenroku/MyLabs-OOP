@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2021 (64-Bit Оценочная версия) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="297mm" height="210mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 29700 21000"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+    .str0 {stroke:#2B2A29;stroke-width:40;stroke-miterlimit:22.9256}
+    .fil0 {fill:purple;
+           filter: drop-shadow(500px 100px 150px red);
+    }
+    .fil1 {fill:darkblue}
+    .fil2 {fill:SteelBlue}
+    .fil3 {fill:white;
+            opacity:0.5;
+    }
+  </style>
+ </defs>
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <rect class="fil0 str0" transform="matrix(0.71 0.703 -0.702 0.71 15039.1 3241.4)" width="8671" height="8671"/>
+  <rect class="fil1 str0" x="12000" y="6330" width="6160" height="6105"/>
+  <rect class="fil2 str0" transform="matrix(0.71 0.703 -0.702 0.71 11650 1260)" x="6000" y="1200" width="4300" height="4300"/>
+  <line  class="fil0 str0" x1="8980" y1="9400" x2="21200" y2="9350"/>
+  <ellipse class="fil3 str0" cx="15100" cy="9420" rx="1100" ry="1100"/>
+  <polygon class="fil1 str0" points="15050,3350 13050,1050 17050,1050" fill="violet" stroke="purple" stroke-width="50"/>
+  <polygon class="fil1 str0" points="15100,15400 13100,17700 17100,17700" fill="violet" stroke="purple" stroke-width="50"/>
+ </g>
+</svg>
