@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        
+        div {
+            position: absolute;
+            border-radius: 40%;
+        }
+        
+        .canv {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+   
+        <select name="color" id="list">
+            <option>blue</option>>
+            <option>green</option>>
+            <option>red</option>>
+            <option>yellow</option>>
+        </select>
+        <input type="radio" name="func" value='1'>y=x^2
+        <input type="radio" name="func" value='2' >y=x^3
+        <input type="radio" name="func" value='3'>y=sin(x)
+        <input type="radio" name="func" value='4'>y=cos(x)
+        <button>Построить график</button>
+
+    <div class="canv"></div>
+    <script src="ex5.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <svg width="1400" height="900">
+        <defs>
+            <path id="my_path" d="M200,300 C300,400 400,400 500,300"/>   
+        </defs>
+
+        <text>
+            <textPath xlink:href="#my_path">Текст Текст Текст</textPath>
+            <animate attributeName="stroke" values="black;white;black" dur="5s" repeatCount="indefinite"/>
+            <animate attributeName="font-size" values="10;50;10" dur="8s" repeatCount="indefinite"/>
+            <animate attributeName="fill" values="darkblue;purple;yellow;violete;darkblue" dur="5s" repeatCount="indefinite"/>
+        </text>
+    </svg>
+</body>
+</html>

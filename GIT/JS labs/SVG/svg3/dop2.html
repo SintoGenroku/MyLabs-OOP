@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <svg width="1400" height="900">
+        <style>
+            text{
+                font-family: Arial;
+                font-size: 50px;
+            }
+        </style>
+        <text x="25" y="55" text-decoration="underline" word-spacing="7 ">Анимированные надписи:</text>
+        <text x="25" y="125">-Анимация размера
+            <animate attributeName="font-size" values="0;50;0" dur="8s" repeatCount="indefinite"/>
+        </text>
+        <text x="25" y="225" fill="darkred" stroke-width="2px">-Анимация обводки
+            <animate attributeName="stroke" values="black;white;black" dur="5s" repeatCount="indefinite"/>
+        </text>
+        <text x="25" y="325">-Анимация цвета заливки
+            <animate attributeName="fill" values="darkblue;purple;yellow;violete;darkblue" dur="5s" repeatCount="indefinite"/>
+        </text>
+    </svg>
+</body>
+</html>

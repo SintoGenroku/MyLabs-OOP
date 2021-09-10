@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE FACULTY  [
+<!ELEMENT FACULTY (SPECIALIZATION+)>
+<!ELEMENT SPECIALIZATION (NAME, MARK, OPACITY, CITY)>
+<!ELEMENT NAME (#PCDATA)>
+<!ELEMENT MARK (#PCDATA)>
+<!ELEMENT OPACITY (#PCDATA)>
+<!ELEMENT CITY (#PCDATA)>
+]>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<FACULTY>
+	<SPECIALIZATION>
+			<NAME>БГУ</NAME>
+			<MARK>бююджет: 302  <br />
+            платная основа: 244</MARK>
+			<OPACITY>90 человек</OPACITY>
+			<CITY>г.Минск</CITY>
+</SPECIALIZATION>
+<SPECIALIZATION>
+			<NAME>БГУ(Барановический Государственный Университет)</NAME>
+			<MARK>бююджет: 282
+            платная основа: 244</MARK>
+			<OPACITY>50 человек</OPACITY>
+			<CITY>г.Барановичи</CITY>
+</SPECIALIZATION>
+<SPECIALIZATION>
+			<NAME>БГУиР(ИСиТ в экономике)</NAME>
+			<MARK>бююджет: 333
+            платная основа: 263</MARK>
+			<OPACITY>75 человек</OPACITY>
+			<CITY>г.Минск</CITY>
+</SPECIALIZATION>
+<SPECIALIZATION>
+			<NAME>БГУиР(ИСиТ в логистике)</NAME>
+			<MARK>бююджет: 326
+            платная основа: 233</MARK>
+			<OPACITY>65 человек</OPACITY>
+			<CITY>г.Минск</CITY>
+</SPECIALIZATION>
+<SPECIALIZATION>
+			<NAME>БНТУ(ИСиТ в обработке и представлении информации)</NAME>
+			<MARK>бююджет: 322
+            платная основа: 238</MARK>
+			<OPACITY>80 человек</OPACITY>
+			<CITY>г.Минск</CITY>
+</SPECIALIZATION>
+</FACULTY>

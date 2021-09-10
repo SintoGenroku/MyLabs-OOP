@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='spec.xslt'?>
+<Groupmates>
+	<Student>
+			<Name>Даниил</Name>
+			<Surname>Кулинкович</Surname>
+			<Score>89</Score>
+			<BirthDate>2007 г.</BirthDate>
+	</Student>
+	<Student>
+			<Name>Егор</Name>
+			<Surname>Рудьман</Surname>
+			<Score>1337</Score>
+			<BirthDate>2002 г.</BirthDate>
+	</Student>
+	<Student>
+			<Name>Ваня</Name>
+			<Surname>Шаюк</Surname>
+			<Score>228</Score>
+			<BirthDate>1889 г.</BirthDate>	
+	</Student>
+	<Student>
+			<Name>Антон</Name>
+			<Surname>Жданов</Surname>
+			<Score>189</Score>
+			<BirthDate>2001 г.</BirthDate>
+	</Student>
+	<Student>
+			<Name>Максим</Name>
+			<Surname>Матарас</Surname>
+			<Score> - </Score>
+			<BirthDate>~6500 лет до Н.Э.</BirthDate>
+	</Student>
+</Groupmates>
