@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace lab2
 {
@@ -19,6 +20,7 @@ namespace lab2
             ushort ushortNumber = 65;
             char Symbol = 'q';
             string strOfDream = "Awesome! Your mark is 10!";
+            string str = "54";
             Console.WriteLine($" bool: {isLabPassed}\n int: {intNumber}\n byte: {byteNumber}\n double: {doubleNumber}\n long:{longNumber}\n string: {strOfDream}\n char: {Symbol}\n etc.");
 
             //implicit conversion
@@ -34,6 +36,41 @@ namespace lab2
             byteNumber = (byte)sbyteNumber;
             ushortNumber = (ushort)uintNumber;
             longNumber = (long)shortNumber;
+
+            try
+            {
+                isLabPassed = Convert.ToBoolean(intNumber);
+            }
+
+            catch (FormatException error)
+            {
+                Console.WriteLine(error.Message);
+            }
+            try
+            {
+                intNumber = Convert.ToInt32(str);
+            }
+            catch (FormatException error)
+            {
+                Console.WriteLine(error.Message);
+            }
+
+            Console.WriteLine($"{isLabPassed}, {intNumber} changed by Convert ");
+
+            //packing
+            int i = 99;
+            object obj = i;
+            //unpacking
+            int n = (int)obj;
+            
+            dynamic dyn = "i'm dynamic str";
+            dyn = true;
+            Console.WriteLine(dyn);
+
+            int ? mbNull = 8;
+            int ? l = null;
+
         }
+
     }
 }
