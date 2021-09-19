@@ -125,7 +125,7 @@ namespace lab2
             sb.Remove(6, 6);
             Console.WriteLine(sb);
 
-            #endregion*/
+            #endregion
             #region arrays
 
             int[,] matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
@@ -146,9 +146,9 @@ namespace lab2
             {
                 Console.Write($"{e} ");
             }
-            Console.Write($"Lenght of array: {arr.Length}\nEnter position");
+            Console.Write($"\nLenght of array: {arr.Length}\nEnter position: ");
             int pos = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter number");
+            Console.Write("Enter number: ");
             int number = Convert.ToInt32(Console.ReadLine());
 
             arr[pos-1] = number;
@@ -156,11 +156,31 @@ namespace lab2
             {
                 Console.Write($"{e} ");
             }
-
+            Console.WriteLine();
             string[][] nums = new string[3][];
             nums[0] = new string[2] { "a", "b" };
             nums[1] = new string[3] { "c", "d", "e" };
-            nums[2] = new string[4] { "f","g","h","i", }; 
+            nums[2] = new string[4] { "f","g","h","i", };
+            foreach (string[] row in nums)
+            {
+                foreach (string letter in row)
+                {
+                    Console.Write($"{letter} \t");
+                }
+                Console.WriteLine();
+            }
+            var vstr = "qwerty";
+            var v_arr = new[]{1,2,3 };
+            #endregion*/
+
+            #region cortege
+
+            (int, string, char, string, ulong) tuple = (5, "five", 'f', "number", 5555555555);
+            foreach (var el in tuple)
+            { 
+            }
+            Console.WriteLine($"1){tuple.Item1}\n2){tuple.Item2}\n3){tuple.Item3}\n4){tuple.Item4}\n5){tuple.Item5}");
+
             #endregion
 
         }
