@@ -176,14 +176,34 @@ namespace lab2
             #region cortege
 
             (int, string, char, string, ulong) tuple = (5, "five", 'f', "number", 5555555555);
-            foreach (var el in tuple)
-            { 
+            Console.WriteLine($"2){tuple.Item2}\n4){tuple.Item4}\n5){tuple.Item5}");
+            Console.WriteLine($"All cortege{tuple}");
+
+            (int, int, int, char) func(int[] arr, string word)
+            {
+                int min = int.MaxValue;
+                int max = int.MinValue;
+                int sum = 0;
+                foreach (var item in arr)
+                {
+                    sum += item;
+                    if (item > max)
+                    {
+                        max = item;
+                    }
+                    if (item < min)
+                    {
+                        min = item;
+                    }
+                }
+                return (max, min, sum, word[0]);
             }
-            Console.WriteLine($"1){tuple.Item1}\n2){tuple.Item2}\n3){tuple.Item3}\n4){tuple.Item4}\n5){tuple.Item5}");
 
-            #endregion
-
+            var resFunc = func(new int[4] { 1, 2, 3, 4 }, "bye");
+            Console.WriteLine($"{resFunc.Item1} {resFunc.Item2} " +
+                $"{resFunc.Item3} {resFunc.Item4}");
         }
+            #endregion
 
     }
 }
