@@ -7,7 +7,7 @@ namespace lab2
     {
         static void Main(string[] args)
         {
-           /* #region types
+           #region types
             bool isLabPassed = true;
             int intNumber = 15;
             uint uintNumber = 123456789U;
@@ -173,11 +173,18 @@ namespace lab2
             var v_arr = new[]{1,2,3 };
             #endregion*/
 
-            #region cortege
+          /*  #region cortege
 
             (int, string, char, string, ulong) tuple = (5, "five", 'f', "number", 5555555555);
             Console.WriteLine($"2){tuple.Item2}\n4){tuple.Item4}\n5){tuple.Item5}");
             Console.WriteLine($"All cortege{tuple}");
+
+            var magicBox = ( letter: 'c', str: "it's str baby", number: 23);
+            object packed = magicBox;
+            (char, string, int) unpacked = (( char, string, int))packed;
+            Console.WriteLine($"Unpacked cort {unpacked.Item3} ");
+
+            var (letter, str, number) = unpacked;
 
             (int, int, int, char) func(int[] arr, string word)
             {
@@ -202,8 +209,18 @@ namespace lab2
             var resFunc = func(new int[4] { 1, 2, 3, 4 }, "bye");
             Console.WriteLine($"{resFunc.Item1} {resFunc.Item2} " +
                 $"{resFunc.Item3} {resFunc.Item4}");
-        }
+
+            void local1()
+            {
+                int check = checked((int)2147483647);
+            }
+            void local2()
+            {
+                int check = unchecked((int)2147483647);
+            }
+
             #endregion
+       */ }
 
     }
 }
