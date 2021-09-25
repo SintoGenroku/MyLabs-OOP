@@ -11,17 +11,52 @@ namespace lab3
           private  string planeType;
           public  string departureTime;
           public  string days;
+          private readonly int id = 0;
+          private const string airlineName = "S7 Airlines";
 
-            public Airline() { destination = "---"; flightNumber = null; planeType = "---"; departureTime = "---"; days = "---"; }//1st constructor
-            public Airline(string dest) { destination = dest; flightNumber = null; planeType = "---"; departureTime = "---"; days = "---"; }//2nd constructor
+            static Airline() 
+            {
+                Console.WriteLine("static constructor worked");
+            }
+            public Airline()    //1st constructor 
+            {
+                destination = "---"; 
+                flightNumber = null; 
+                planeType = "---"; 
+                departureTime = "---"; 
+                days = "---"; 
+            }
+            public Airline(string dest)     //2nd constructor
+            { 
+                destination = dest; 
+                flightNumber = null; 
+                planeType = "---"; 
+                departureTime = "---"; 
+                days = "---"; 
+            }
             public Airline(string dest, int number, string plane, string time, string d) {
-                destination = dest;
+                destination = dest;     //3rd constructor
                 flightNumber = number;
                 planeType = plane;
                 departureTime = time;
-                days = d; 
-            }//3rd constructor
+                days = d;
+                id++;
+            }
 
+            public string Name 
+            {
+                get 
+                {
+                    return airlineName;
+                }
+            }
+            public string ID
+            {
+                set
+                {
+                    ID = value;
+                }
+            }
 
         }
         static void Main(string[] args)
