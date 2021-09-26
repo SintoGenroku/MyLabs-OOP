@@ -4,7 +4,7 @@ namespace lab3
 {
     class Program
     {
-        class Airline
+        public partial class Airline
         {
             public string destination;
             public int? flightNumber;
