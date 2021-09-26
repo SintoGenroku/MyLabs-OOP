@@ -6,33 +6,36 @@ namespace lab3
     {
         class Airline
         {
-          public  string destination;
-          public  int? flightNumber;
-          private  string planeType;
-          public  string departureTime;
-          public  string days;
-          private readonly int id = 0;
-          private const string airlineName = "S7 Airlines";
+            public string destination;
+            public int? flightNumber;
+            private string planeType;
+            public string departureTime;
+            public string days;
+            private readonly int? id;
+            private const string airlineName = "S7 Airlines";
+            private static int count = 0;
 
-            static Airline() 
+            static Airline()
             {
                 Console.WriteLine("static constructor worked");
             }
             public Airline()    //1st constructor 
             {
-                destination = "---"; 
-                flightNumber = null; 
-                planeType = "---"; 
-                departureTime = "---"; 
-                days = "---"; 
+                destination = "---";
+                flightNumber = null;
+                planeType = "---";
+                departureTime = "---";
+                days = "---";
+                id = null;
             }
             public Airline(string dest)     //2nd constructor
-            { 
-                destination = dest; 
-                flightNumber = null; 
-                planeType = "---"; 
-                departureTime = "---"; 
-                days = "---"; 
+            {
+                destination = dest;
+                flightNumber = null;
+                planeType = "---";
+                departureTime = "---";
+                days = "---";
+                id = null;
             }
             public Airline(string dest, int number, string plane, string time, string d) {
                 destination = dest;     //3rd constructor
@@ -40,9 +43,21 @@ namespace lab3
                 planeType = plane;
                 departureTime = time;
                 days = d;
-                id++;
+                id = dest.GetHashCode() + time.GetHashCode();
+                count++;
             }
 
+            public static void Info(Airline obj) 
+            {
+                Console.WriteLine("Info:");
+                Console.WriteLine($"Destunation: {obj.destination}\nFlight number: {obj.flightNumber}\nPPlane type: {obj.planeType}");
+                Console.WriteLine($"Departure time:{obj.departureTime}\n Days of flights: {obj.days}\n request ID: {obj.id}");
+
+            }
+            public override bool Equals()
+                {
+                    
+                }
             public string Name 
             {
                 get 
