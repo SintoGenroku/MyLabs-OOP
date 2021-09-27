@@ -2,9 +2,9 @@
 
 namespace lab3
 {
-    class Program
+    public partial class Program
     {
-        public partial class Airline
+        class Airline
         {
             public string destination;
             public int? flightNumber;
@@ -54,10 +54,11 @@ namespace lab3
                 Console.WriteLine($"Departure time:{obj.departureTime}\n Days of flights: {obj.days}\n request ID: {obj.id}");
 
             }
-            public override bool Equals()
-                {
-                    
-                }
+            public override bool Equals(Object obj)
+            {
+                //Check for null and compare run-time types.
+                return base.Equals(obj);
+            }
             public string Name 
             {
                 get 
@@ -75,8 +76,13 @@ namespace lab3
 
         }
         static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
+        {   
+            Airline dream = new Airline("Prague", 759211,"Airbus A310", "13:15", "Wednesday, Tuesday, Sunday");
+            Airline bane = new Airline("Novocheboksarsk", 228322, "The Lastochka", "8:00", "Every day");
+            Airline.Info(dream);
+            Console.WriteLine("It was dream\nNow I'll show you pain");
+            Airline.Info(bane);
+            Program.Services();
         }
     }
 }
