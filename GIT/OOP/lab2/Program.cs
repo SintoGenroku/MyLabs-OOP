@@ -75,7 +75,7 @@ namespace lab2
 
             var car = new { Mark = "Porsche", Color = "gray", Price = 100000 };
             Console.WriteLine($"I've just bought {car.Color} {car.Mark} for {car.Price} dollars!!!");
-            //car.Color = "red"; error because car has anonymous type
+            //car.Color = "red"; //error because car has anonymous type
             //(anonymous object properties are available for setting only in the initializer)
             #endregion
             #region strings
@@ -133,7 +133,7 @@ namespace lab2
             int rows = matrix.GetUpperBound(0) + 1;
             int columns = matrix.Length / rows;
             
-            for (int i = 0; i < rows; i++)
+            for ( i = 0; i < rows; i++)
             {
                 for (int j = 0; j < columns; j++)
                 {
@@ -163,17 +163,17 @@ namespace lab2
             nums[2] = new string[4] { "f","g","h","i", };
             foreach (string[] row in nums)
             {
-                foreach (string letter in row)
+                foreach (string letters in row)
                 {
-                    Console.Write($"{letter} \t");
+                    Console.Write($"{letters} \t");
                 }
                 Console.WriteLine();
             }
             var vstr = "qwerty";
             var v_arr = new[]{1,2,3 };
-            #endregion*/
+            #endregion
 
-          /*  #region cortege
+          /* #region cortege
 
             (int, string, char, string, ulong) tuple = (5, "five", 'f', "number", 5555555555);
             Console.WriteLine($"2){tuple.Item2}\n4){tuple.Item4}\n5){tuple.Item5}");
@@ -219,8 +219,8 @@ namespace lab2
                 int check = unchecked((int)2147483647);
             }
 
-            #endregion
-       */ }
+            #endregion*/
+        }
 
     }
 }
