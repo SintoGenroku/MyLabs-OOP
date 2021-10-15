@@ -3,16 +3,10 @@
     class Array
     {
         private int[] _array;
-        private int first;
-        private int second;
-        private int third;
         private int length;
         public Array(int a = 777, int b = 666, int c = 555)
         {
             _array = new int[3] { a, b, c};
-            first = a;
-            second = b;
-            third = c;
             length = _array.Length;
 
         }
@@ -72,6 +66,11 @@
         public static Array operator +(Array obj, Array inc) //обьединение массивов
         {
             var tmp = obj;
+            int size = tmp.length < inc.length ? tmp.length : inc.length;
+            for (int i = 0; i < size; i++)
+            {
+                tmp._array[i] += inc._array[i];
+            }
             return tmp;
         }
     }
