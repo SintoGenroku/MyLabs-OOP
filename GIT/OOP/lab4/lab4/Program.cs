@@ -5,8 +5,10 @@ namespace lab4
     class Program
     {
         static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
+        {  
+            string str = "qwerty UIOP aSdghT";
+            string newstr = str.VowelDel();
+            Console.WriteLine($"{str}\n {newstr}");
         }
     }
 }
