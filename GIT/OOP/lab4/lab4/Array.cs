@@ -1,7 +1,10 @@
 ﻿namespace lab4
 {
-    class Array
+    public partial class Array
     {
+       
+
+
         private int[] _array;
         private int length;
         public Array(int a = 777, int b = 666, int c = 555)
