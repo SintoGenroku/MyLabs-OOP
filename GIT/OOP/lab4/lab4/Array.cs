@@ -2,9 +2,7 @@
 {
     public partial class Array
     {
-       
-
-
+        //public Owner user { get; set; } = new Owner(...);
         private int[] _array;
         private int length;
         public Array(int a = 777, int b = 666, int c = 555)
