@@ -9,7 +9,7 @@ namespace lab4
             string str = "qwerty UIOP aSdghT";
             string newstr = str.VowelDel();
             Console.WriteLine($"{str}\n {newstr}");
-            Console.WriteLine($"{str.Sum(newstr)}");
+            Console.WriteLine($"{newstr.Sum(str)}");
            
         }
     }
