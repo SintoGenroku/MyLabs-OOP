@@ -16,7 +16,8 @@
             {
                 Name = n;
                 Corporation = c;
-                ID = this.GetHashCode();
+                ID = GetRandom();
+                //ID = this.GetHashCode();
             }
         }
         public Array(int a = 777, int b = 666, int c = 555)
