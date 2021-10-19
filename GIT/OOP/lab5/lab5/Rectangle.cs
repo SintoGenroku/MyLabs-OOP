@@ -1,23 +1,45 @@
-﻿namespace lab5
+﻿using System;
+namespace lab5
 {
-    public class Rectangle : Figure
+    public sealed class Rectangle : Figure, Geometry
     {
-        private double area;
-        private double perimeter;
-        private double width;
-        private double height;
-        public double Perimeter()
+        private int area;
+        private int perimeter;
+        private int width;
+        private int height;
+        private string color;
+        public Rectangle(int w, int h) 
+        {
+            width = w;
+            height = h;
+            area = w * h;
+            perimeter = 2 * w + 2 * h;
+            color = Color();
+        }
+        public int Perimeter()
         {
             return 0;
         }
-        public double Area()
+        public int Area()
         {
             return 0;
         }
-        public string Color()
+        override public void ShowInfo()
         {
-            return "ass";
+            if (this != null)
+            {
+                Console.WriteLine($"Rectangle \n1)Area: {area} \n2)perimeter: {perimeter} \n3)Width: {width} \n4)Height: {height} \n4)Color: {color}");
+            }
+            else
+            {
+                Console.WriteLine("Incorrect data for Rectangle!");
+            }
+        }
+        public new string Color() 
+        {
+            Console.WriteLine("Enter the color:");
+            string c = Console.ReadLine();
+            return c;
         }
     }
-}
 }
