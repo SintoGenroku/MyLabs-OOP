@@ -1,24 +1,39 @@
-﻿namespace lab5
+﻿using System;
+
+namespace lab5
 {
     public class Circle : Figure
     {
-        private float area;
-        private float perimeter;
-        private float radius;
+        private double area;
+        private double perimeter;
+        private double radius;
+        private string color;
 
 
 
-        public float Perimeter()
+    
+        public new double Perimeter()
         {
-            return 0;
+            double per = Math.PI*2*radius;
+            return per;
         }
-        public float Area()
+        public new double Area()
         {
-            return 0;
+           double ar = Math.PI * Math.Sqrt(radius);
+            return ar;
         }
-        public string Color() 
+        public new string Color() 
         {
-            return "ass";
+            int pos = rand.Next(0, 7);
+            string c = coloration[pos];
+            return c;
+        }
+        public Circle(double r) 
+        {
+            radius = r;
+            perimeter = Perimeter();
+            area = Area();
+            color = Color();
         }
     }
 }
