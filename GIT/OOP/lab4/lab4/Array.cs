@@ -2,9 +2,23 @@
 {
     public partial class Array
     {
-        //public Owner user { get; set; } = new Owner(...);
+        public Owner user { get; set; } = new Owner("Anton","Google");
         private int[] _array;
         private int length;
+
+        public class Owner 
+        {
+            private readonly int ID;
+            private string Name;
+            private string Corporation;
+
+            public Owner(string n = "unknown", string c = "unknown") 
+            {
+                Name = n;
+                Corporation = c;
+                ID = this.GetHashCode();
+            }
+        }
         public Array(int a = 777, int b = 666, int c = 555)
         {
             _array = new int[3] { a, b, c};
