@@ -40,6 +40,13 @@ namespace lab4
         {
             return str.Length;
         }
+        public static void Show(this  Array arr)
+        {
+            foreach(int e in arr._array)
+            {
+                Console.WriteLine(e);
+            }
+        }
     }
 
 }

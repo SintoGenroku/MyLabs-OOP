@@ -3,7 +3,7 @@
     public partial class Array
     {
         public Owner user { get; set; } = new Owner("Anton","Google");
-        private int[] _array;
+        public int[] _array;
         private int length;
 
         public class Owner 
