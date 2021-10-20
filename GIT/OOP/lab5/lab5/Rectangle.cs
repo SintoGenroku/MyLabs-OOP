@@ -3,11 +3,11 @@ namespace lab5
 {
     public sealed class Rectangle : Figure, Geometry
     {
-        private int area;
-        private int perimeter;
-        private int width;
-        private int height;
-        private string color;
+        private double area { get; set; }
+        private double perimeter { get; set; }
+        private int width { get; set; }
+        private int height { get; set; }
+        private string color { get; set; }
         public Rectangle(int w, int h) 
         {
             width = w;
@@ -16,11 +16,11 @@ namespace lab5
             perimeter = 2 * w + 2 * h;
             color = Color();
         }
-        public int Perimeter()
+        public double Perimeter()
         {
             return 0;
         }
-        public int Area()
+        public double Area()
         {
             return 0;
         }
@@ -40,6 +40,12 @@ namespace lab5
             Console.WriteLine("Enter the color:");
             string c = Console.ReadLine();
             return c;
+        }
+
+        public override string ToString()
+        {
+            
+            return "Rectangle override";
         }
     }
 }

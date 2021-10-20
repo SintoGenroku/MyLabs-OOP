@@ -12,7 +12,10 @@ namespace lab5
             string c = coloration[pos];
             return c;
         }
-
+        public override string ToString()
+        {
+            return "Figure override";
+        }
         public static string[] coloration = { "cyan", "blue", "green", "yellow", "red", "orange", "purple" };
         public static Random rand = new Random();
 

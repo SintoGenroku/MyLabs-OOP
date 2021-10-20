@@ -4,10 +4,10 @@ namespace lab5
 {
     public sealed class Circle : Figure, Geometry
     {
-        private double area;
-        private double perimeter;
-        private double radius;
-        private string color;
+        private double area { get; set; }
+        private double perimeter { get; set; }
+        private double radius { get; set; }
+        private string color { get; set; }
 
         public Circle(double r)
         {
@@ -16,12 +16,12 @@ namespace lab5
             perimeter = Perimeter();
             area = Area();
         }
-        private double Perimeter()
+        public double Perimeter()
         {
             double per = Math.PI*2*radius;
             return per;
         }
-        private  double Area()
+        public  double Area()
         {
            double ar = Math.PI * Math.Sqrt(radius);
             return ar;
@@ -31,7 +31,7 @@ namespace lab5
         {
             if (this != null)
             {
-                Console.WriteLine($"Rectangle \n1)Area: {area} \n2)Perimeter: {perimeter} \n3)Radius: {radius} \n4)Color: {color}");
+                Console.WriteLine($"Circle \n1)Area: {area} \n2)Perimeter: {perimeter} \n3)Radius: {radius} \n4)Color: {color}");
             }
             else 
             {
@@ -39,6 +39,11 @@ namespace lab5
             }
         }
 
+        public override string ToString()
+        {
+
+            return "Circle override";
+        }
 
     }
 }
