@@ -17,21 +17,16 @@
                 Name = n;
                 Corporation = c;
                 ID = GetRandom();
-                //ID = this.GetHashCode();
+               
             }
         }
         public Array(int a = 777, int b = 666, int c = 555)
         {
-            _array = new int[3] { a, b, c};
+            _array = new int[] { a, b, c};
             length = _array.Length;
 
         }
-        public int[] push(int count) 
-        {
-            _array[length + 1] = count;
-            length++;
-            return _array;
-        }
+
         public static Array operator -(Array obj, Array inc) //разность со скалярным значением
         {
             var tmp = obj;
@@ -74,7 +69,7 @@
         }
         public static bool operator ==(Array obj, Array inc) //хз
         {
-            var tmp = obj;
+
             return false;
 
 

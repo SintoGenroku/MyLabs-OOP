@@ -1,14 +1,13 @@
 ﻿using System;
-namespace lab5
+namespace lab6
 {
-    public sealed class Rectangle : Figure, Geometry
+    public  sealed class Rectangle : Figure, Geometry
     {
-        private double area { get; set; }
-        private double perimeter { get; set; }
+        
         private int width { get; set; }
         private int height { get; set; }
         private string color { get; set; }
-        public Rectangle(int w, int h) 
+        public Rectangle(int w, int h)
         {
             width = w;
             height = h;
@@ -35,7 +34,7 @@ namespace lab5
                 Console.WriteLine("Incorrect data for Rectangle!");
             }
         }
-        public override string Color() 
+        public new string Color()
         {
             Console.WriteLine("Enter the color:");
             string c = Console.ReadLine();
@@ -44,7 +43,7 @@ namespace lab5
 
         public override string ToString()
         {
-            
+
             return "Rectangle override";
         }
     }
