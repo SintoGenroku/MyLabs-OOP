@@ -72,15 +72,44 @@ namespace lab7
             var name = Console.ReadLine();
             var surname =Console.ReadLine();
             var age = Int32.Parse(Console.ReadLine());
-            
+
             try
             {
                 User loh = new User(name, surname, age);
             }
-            catch(UserException ex) 
+            catch (UserException ex)
             {
                 Console.WriteLine("Error:  " + ex.Message);
             }
+            finally 
+            {
+                Console.WriteLine("С таким именем нам пользователи не нужны");
+            }
+
+            Circle box = new Circle(-30);
+            Rectangle tv = new Rectangle(12, -10);
+
+            bool isLabPassed = true;
+            int intNumber = 15;
+            string str = "54";
+            try
+            {
+                isLabPassed = Convert.ToBoolean(intNumber);
+            }
+
+            catch (FormatException error)
+            {
+                Console.WriteLine(error.Message);
+            }
+            try
+            {
+                intNumber = Convert.ToInt32(str);
+            }
+            catch (FormatException error)
+            {
+                Console.WriteLine(error.Message);
+            }
+
         }
     }
 }

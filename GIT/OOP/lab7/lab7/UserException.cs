@@ -11,7 +11,14 @@ namespace lab7
             : base(message)
             { }
         }
- 
+
+    class FigureException : Exception
+    {
+        public FigureException(string message)
+        : base(message)
+        { }
+    }
+
 
     class User
     {

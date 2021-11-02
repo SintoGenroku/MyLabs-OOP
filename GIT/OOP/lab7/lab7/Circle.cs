@@ -8,7 +8,16 @@ namespace lab7
         public sealed class Circle : Figure, Geometry
         {
 
-            private double radius { get; set; }
+            private double radius {
+            get { return radius; }
+            set
+            {
+                if (value <= 0)
+                    throw new FigureException("Radius is can't be less than 0 or be equal");
+                else
+                    radius = value;
+            }
+        }
             private string color { get; set; }
 
             public Circle(double r)

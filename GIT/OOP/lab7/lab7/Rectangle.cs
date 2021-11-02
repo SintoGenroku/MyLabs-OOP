@@ -7,8 +7,28 @@ namespace lab7
     public sealed class Rectangle : Figure, Geometry
     {
 
-        private int width { get; set; }
-        private int height { get; set; }
+        private int width 
+        {
+            get { return width; }
+            set
+            {
+                if (value < 0)
+                    throw new FigureException("Width is can't be less than 0");
+                else
+                    width = value;
+            }
+        }
+        private int height 
+        {
+            get { return height; }
+            set
+            {
+                if (value < 0)
+                    throw new FigureException("Height is can't be less than 0");
+                else
+                    height = value;
+            }
+        }
         private string color { get; set; }
         public Rectangle(int w, int h)
         {
