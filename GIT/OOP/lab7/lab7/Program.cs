@@ -86,8 +86,20 @@ namespace lab7
                 Console.WriteLine("С таким именем нам пользователи не нужны");
             }
 
-            Circle box = new Circle(-30);
-            Rectangle tv = new Rectangle(12, -10);
+            try
+            {
+                Circle box = new Circle(-30);
+                Rectangle tv = new Rectangle(12, -10);
+            }
+            catch (FigureException ex)
+            {
+                Console.WriteLine("Error:  " + ex.Message);
+            }
+            finally 
+            {
+                Console.WriteLine("wubbalubbadubdub");
+            }
+               
 
             bool isLabPassed = true;
             int intNumber = 15;
