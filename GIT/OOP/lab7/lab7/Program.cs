@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace lab7
 {
@@ -55,6 +56,7 @@ namespace lab7
             Console.WriteLine("enter a numbers to calculating");
             var a  = Int32.Parse(Console.ReadLine());
             var b = Int32.Parse(Console.ReadLine());
+           
             try
             {
                 a /= b;
@@ -83,7 +85,7 @@ namespace lab7
             }
             finally 
             {
-                Console.WriteLine("С таким именем нам пользователи не нужны");
+                Console.WriteLine("Невоспитанные нам пользователи не нужны");
             }
 
             try

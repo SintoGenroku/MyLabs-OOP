@@ -1,21 +1,33 @@
 ﻿using System;
-
 namespace lab8
 {
     class Program
     {
+        public static object JsonConvert { get; private set; }
+
         static void Main(string[] args)
         {
-            string str = "qwerty UIOP aSdghT";
-            string newstr = str.VowelDel();
-            Console.WriteLine($"{str}\n {newstr}");
-            Console.WriteLine($"{newstr.Sum(str)}");
-            Array one = new Array(1, 2, 3);
-            Array eno = new Array(3, 2, 1);
-            Array arrSum = one + eno;
-            Array arrDiff = one - eno;
-            arrSum.Show();
-            arrDiff.Show();
+            TmpClass<string> jinja = new TmpClass<string>();
+            jinja.Connect("12");
+            jinja.Connect("13");
+            jinja.Connect("str");
+            jinja.Connect("striing");
+            jinja.Show();
+            Console.WriteLine(jinja.GetType());
+
+
+            var inv = new TmpClass<Array>();
+            inv.Connect(new Array());
+            
+
+            var inv2 = new TmpClass<Type<int>>();
+            inv2.Connect(new Type<int> { Value = 320494 });
+            inv2.Write();
+
+            var inv3 = new TmpClass<Array>();
+            inv3.Read();
+           inv3.Show();
+            
         }
     }
 }

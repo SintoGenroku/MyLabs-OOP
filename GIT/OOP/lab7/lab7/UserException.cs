@@ -27,8 +27,8 @@ namespace lab7
             get { return name; }
             set
             {
-                if (value == "Dima" || value == "Dmitry" || value == "Дима")
-                    throw new UserException("Пашол вон, пёс");
+                if (value == "Злодей")
+                    throw new UserException("Ты в блек-листе");
                 else
                     name = value;
             }
