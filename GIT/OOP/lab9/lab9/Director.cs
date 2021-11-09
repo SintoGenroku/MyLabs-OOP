@@ -8,43 +8,35 @@ namespace lab9
     
     class Director
     {
-        IsJobDone solution;
-       // event EndOfMonth SalaryTime; 
-        private int salary;
-        private string post;
-        private int lvl;
-        private bool jobDone;
+        public event IsJobDone minusbabki;
+        public event IsJobDone plusbabki; 
+        
 
-        public Director(string post, int salary, int lvl = 1, bool jobDone = false) 
+        private bool jobDone;
+        public int Salary{ get; set; }
+
+        public Director( int salary, bool jobDone = false) 
         {
-            this.salary = salary;
-            this.post = post;
-            this.lvl = lvl;
+            this.Salary = salary;
             this.jobDone = jobDone;
         }
+
+
 
         public void EndOfMonth()
         {
             if (jobDone)
             {
-                solution = ToRaise;
+                plusbabki();
             }
             else
             {
-                solution = Penalty;
+                minusbabki();
             }
         }
-        public void ToRaise() =>        
-            ++lvl;
-
-        public void ToReduce() =>
-            lvl = (lvl > 1) ? --lvl : lvl;
-
-        public void Bonus() =>
-            salary += 500;
-        public void Penalty() =>
-            salary = (salary>500) ? salary -= 500 : salary = 0;
-        
-
+        public void DisplayMessage() 
+        {
+            Console.WriteLine($"Выполнил таск:{jobDone}\n З/П:{Salary}");
+        }
     }
 }

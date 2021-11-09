@@ -5,13 +5,13 @@ using System.Text;
 namespace lab9
 {
 
-    public delegate string Action(string str);
+    
 
-    public static class StrOperations
+    public class StrOperations
     {
-        static Action StrChanger = new Action(VowelDel);
-        
-        public static string VowelDel(string str)
+       
+      
+        public string VowelDel(string str)
         {
             string vowels = "AaEeIiOoUuYy";
             foreach (char e in vowels)
@@ -21,26 +21,56 @@ namespace lab9
             return str;
         }
 
-        public static string FiveClear(this string str)
+        public static void DelFoamingMarks(string str)
         {
-            str = str.Remove(0, 5);
-            return str;
+            string newstr = "";
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] != '.' && str[i] != ',' && str[i] != ':' && str[i] != ';' && str[i] != '!' && str[i] != '?')
+                {
+                    newstr += str[i];
+                }
+            }
+            Console.WriteLine(newstr);
         }
 
-        public static string Sum(this string first, string second)
+        public static string AddElements(string str, string addstr, int num)
         {
+            string newstr = "";
+            for (int i = 0; i < num; i++)
+            {
+                newstr += str[i];
+            }
+            for (int i = 0; i < addstr.Length; i++)
+            {
+                newstr += addstr[i];
+            }
+            if (num < str.Length)
+                for (int i = num - 1; i < str.Length; i++)
+                {
+                    newstr += str[i];
+                }
+            return newstr;
+        }
 
-            first = String.Concat(first, second);
-            return first;
-        }
-        public static int LengthDiff(this string first, string second)
+        public static void Uppercase(string str)
         {
-            int diff = Math.Abs(first.Length - second.Length);
-            return diff;
+            Console.WriteLine(str.ToUpper());
         }
-        public static int CountOfSymbols(this string str)
+
+        public static void DelSpace(string str)
         {
-            return str.Length;
+            string newstr = "";
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] != ' ')
+                    newstr += str[i];
+            }
+            Console.WriteLine(newstr);
+        }
+        public static void Lowercase(string str)
+        {
+            Console.WriteLine(str.ToLower());
         }
 
         /*public static void Show(this Array arr)
