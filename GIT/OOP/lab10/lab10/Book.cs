@@ -6,29 +6,29 @@ using System.Text;
 
 namespace lab10
 {
-    class Book
+    class Book<TKey, TValue> : IDictionary<TKey, TValue>
     {
-        public string Name { get; set; }
-        public string Author { get; set; }
-        public int Cost { get; set; }
+        public TKey Name { get; set; }
+        public TValue Cost { get; set; }
 
-        public Book(string name, string author, int cost) 
+        public Dictionary<TKey, TValue> Bookshelf;
+
+        
+            
+        
+        public Book(TKey name, TValue cost) 
         {
             this.Name = name;
-            this.Author = author;
             this.Cost = cost;
+            Bookshelf.Add(name, cost);
         }
 
         public void ShowInfo() 
         {
-            Console.WriteLine($"Perfect book - \"{Name}\" by {Author} for only {Cost}$");
+            Console.WriteLine($"Perfect book - {Name} for only {Cost}$");
         }
-    }
 
-    class BookCollection<TKey, TValue> : IDictionary<TKey, TValue>
-    {
-        public TValue this[TKey key] { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
+        //*   *   *   *   *   *  *
         public ICollection<TKey> Keys => throw new NotImplementedException();
 
         public ICollection<TValue> Values => throw new NotImplementedException();
@@ -37,7 +37,23 @@ namespace lab10
 
         public bool IsReadOnly => throw new NotImplementedException();
 
+        public TValue this[TKey key] { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public void Add(TKey key, TValue value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool ContainsKey(TKey key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Remove(TKey key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool TryGetValue(TKey key, [MaybeNullWhen(false)] out TValue value)
         {
             throw new NotImplementedException();
         }
@@ -57,22 +73,7 @@ namespace lab10
             throw new NotImplementedException();
         }
 
-        public bool ContainsKey(TKey key)
-        {
-            throw new NotImplementedException();
-        }
-
         public void CopyTo(KeyValuePair<TKey, TValue>[] array, int arrayIndex)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Remove(TKey key)
         {
             throw new NotImplementedException();
         }
@@ -82,7 +83,7 @@ namespace lab10
             throw new NotImplementedException();
         }
 
-        public bool TryGetValue(TKey key, [MaybeNullWhen(false)] out TValue value)
+        public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
         {
             throw new NotImplementedException();
         }
@@ -92,4 +93,5 @@ namespace lab10
             throw new NotImplementedException();
         }
     }
+
 }
