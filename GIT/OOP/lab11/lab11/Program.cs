@@ -60,21 +60,39 @@ namespace lab11
             #region Рейсы
             Airline dream = new Airline("Prague", 759211, "Airbus A310", 13.15, "Wednesday");
             Airline bane = new Airline("Novocheboksarsk", 228322, "The Lastochka", 8.05, "Thursday");
-            Airline Russia = new Airline("Saransk", 264812, "The Lastochka", 4.05, "Friday");
+            Airline Russia = new Airline("Saransk", 264812, "The Lastochka", 14.05, "Friday");
             Airline Germany = new Airline("Dortmund", 683190, "Airbus A280", 19.45, "Wednesday");
-            Airline Poland = new Airline("Krakov", 759211, "Airbus A310", 23.55, "Sunday");
+            Airline Poland = new Airline("Krakov", 180244, "Airbus A310", 23.55, "Sunday");
             Airline Vacation = new Airline("Budapest", 497234, "Airbus A310", 16.35, "Friday");
-            Airline Vacation2 = new Airline("Budapest", 499530, "Airbus A280", 6.35, "Wednesday");
-            Airline Vacation3 = new Airline("Budapest", 437231, "Airbus A310", 9.55, "Thursday");
-            Airline Vacation4 = new Airline("Budapest", 499530, "Airbus A280", 6.35, "Friday");
-
+            Airline Vacation2 = new Airline("Budapest", 899530, "Airbus A280", 6.35, "Wednesday");
+            Airline Vacation3 = new Airline("Budapest", 137231, "Airbus A310", 9.55, "Thursday");
+            Airline Vacation4 = new Airline("Budapest", 911030, "Airbus A280", 6.35, "Friday");
+            
             List<Airline> flights = new List<Airline>() { dream, bane, Germany, Poland, Vacation, Vacation2, Vacation3, Vacation4 };
+            List<Costs> vacs = new List<Costs>()
+            {
+                new Costs(5000, 759211),
+                new Costs (100, 228322),
+                new Costs (3550, 264812),
+                new Costs (2100, 683190),
+                new Costs (2500, 180244),
+                new Costs (2250, 497234),
+                new Costs (2400, 899530),
+                new Costs (2050, 137231),
+                new Costs (2550, 911030)};
 
             var toBudapest = flights.Where(x =>x.Dest == "Budapest");
             var inWednesday = flights.Where(x=>x.Day == "Wednesday");
             var earliest = flights.Where(x=>x.Day == "Thursday").OrderBy(x=>x.Time).Take(1);
             var latest = flights.Where(x => x.Day == "Wedensday" | x.Day == "Friday").OrderBy(x => x.Time).Take(1);
             var sorted = flights.OrderBy(x => x.Time);
+
+            var query = flights.Join(vacs, x => x.FlightNumber, y => y.ID, (x,y) => new { Dest = x.Dest, Day = x.Day, Time = x.Time, Cost = y.Cost })
+                    .Where(x => x.Day == "Wednesday")
+                    .OrderBy(x => x.Time)
+                    .Skip(1)
+                    .Select(x=> "Dest: " + x.Dest.ToUpper() + "| Day: " + x.Day + "| Time: " + x.Time + "| Cost: " + x.Cost);
+
 
             Console.WriteLine("Flights in Budapest for a week:");
             foreach (var item in toBudapest)
@@ -104,6 +122,12 @@ namespace lab11
             foreach (var item in sorted)
             {
                 Airline.Info(item);
+            }
+
+            Console.WriteLine("Example of using complex query:");
+            foreach (var item in query)
+            {
+                Console.WriteLine(item);
             }
             #endregion
 

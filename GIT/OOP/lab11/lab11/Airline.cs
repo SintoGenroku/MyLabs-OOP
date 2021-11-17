@@ -7,11 +7,11 @@ namespace lab11
     class Airline
     {
         private string destination;
-        private int? flightNumber;
+        private int flightNumber;
         private string planeType;
         private double departureTime;
         private string day;
-        private readonly int? id;
+        private readonly int id;
         private const string airlineName = "S7 Airlines";
         private static int count = 0;
 
@@ -37,11 +37,11 @@ namespace lab11
                 return day;
             }
         }
-        public string ID
+        public int FlightNumber
         {
-            set
+            get
             {
-                ID = value;
+                return flightNumber;
             }
         }
         
