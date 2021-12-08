@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.IO;
 
 namespace lab13
 {
-    internal class BASFileManager
+     class BASFileManager
     {
+        private DirectoryInfo dir;
+        private List <DirectoryInfo> list;
+        public BASFileManager(string path) 
+        {
+            dir = new DirectoryInfo(path);
+        }
+        public void FileManager() 
+        {
+            dir.GetDirectories();
+        }
     }
 }

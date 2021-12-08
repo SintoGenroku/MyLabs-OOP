@@ -16,7 +16,8 @@ namespace lab13
 
             string dirPath = file.DirectoryName;    
             DirectoryInfo dir = new DirectoryInfo(dirPath);
-            BASDirInfo.DirInfo(dir);
+
+            BASFileManager drive = new BASFileManager(@"D:\");
         }
     }
 }

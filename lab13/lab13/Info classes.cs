@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Reflection;
 
 namespace lab13
 {
@@ -7,18 +8,22 @@ namespace lab13
     {
         public static void DiskInfo(DriveInfo[] drives)
         {
+            
+            string output = "";
             foreach (DriveInfo drive in drives)
-            {
-                Console.WriteLine($"\nНазвание: {drive.Name}");
-                Console.WriteLine($"Тип: {drive.DriveType}");
-                Console.WriteLine($"Имя файловой системы: {drive.DriveFormat}");
+            {   
+                output+= $"\nНазвание: {drive.Name}\n";
+                output+=$"Тип: {drive.DriveType}\n";
+                output+=$"Имя файловой системы: {drive.DriveFormat}\n";
                 if (drive.IsReady)
                 {
-                    Console.WriteLine($"Объем диска: {drive.TotalSize / 1073741824} ГБ");
-                    Console.WriteLine($"Свободное пространство: {drive.TotalFreeSpace / 1073741824} ГБ");
-                    Console.WriteLine($"Метка: {drive.VolumeLabel}");
+                    output+=$"Объем диска: {drive.TotalSize / 1073741824} ГБ\n";
+                    output+=$"Свободное пространство: {drive.TotalFreeSpace / 1073741824} ГБ\n";
+                    output+=$"Метка: {drive.VolumeLabel}\n";
                 }
+                Console.WriteLine(output);
             }
+            BASLog.Writer(output);
         }
     }
 
@@ -26,13 +31,16 @@ namespace lab13
     {
         public static void FileInfo(FileInfo file) 
         {
+            string output = "";
             if (file.Exists)
             {
-                Console.WriteLine($"\nФайл: '{file.Name}',расшиерние: {file.Extension}, размер: {file.Length}");
-                Console.WriteLine($"Полный путь: {file.DirectoryName}");
-                Console.WriteLine($"Дата создания:{file.CreationTime}");
-                Console.WriteLine($"Дата последнего изменения { file.LastWriteTime }");
+                output += $"\nФайл: '{file.Name}',\nрасшиерние: {file.Extension}, \nразмер: {file.Length}\n";
+                output += $"Полный путь: {file.DirectoryName}\n";
+                output += $"Дата создания:{file.CreationTime}\n";
+                output += $"Дата последнего изменения { file.LastWriteTime }\n";
             }
+            Console.WriteLine(output);
+            BASLog.Writer(output);
         }
     }
 
@@ -40,14 +48,17 @@ namespace lab13
     {
         public static void DirInfo(DirectoryInfo dir)
         {
+            string output = "";
             if (dir.Exists)
             {
-                Console.WriteLine($"\nПапка: {dir.Name}");
-                Console.WriteLine($"Кол-во файлов: {dir.GetFiles().Length}");
-                Console.WriteLine($"Дата создания: {dir.CreationTime}");
-                Console.WriteLine($"Кол-во поддиректорий: {dir.GetDirectories().Length}");
-                Console.WriteLine($"Список родительских директорий: {dir.Parent}");
+                
+                output+=$"\nПапка: {dir.Name}\n";
+                output+=$"Кол-во файлов: {dir.GetFiles().Length}\n";
+                output+=$"Дата создания: {dir.CreationTime}\n";
+                output+=$"Кол-во поддиректорий: {dir.GetDirectories().Length}\n";
+                output+=$"Список родительских директорий: {dir.Parent}\n";
             }
+            Console.WriteLine(output);
         }
     }
 }
