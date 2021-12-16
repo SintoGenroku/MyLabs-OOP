@@ -8,7 +8,7 @@ namespace lab13
     {
         public static void DiskInfo(DriveInfo[] drives)
         {
-            
+            BASLog.Actwrite("DiskInfo");
             string output = "";
             foreach (DriveInfo drive in drives)
             {   
@@ -31,6 +31,7 @@ namespace lab13
     {
         public static void FileInfo(FileInfo file) 
         {
+            BASLog.Actwrite("FileInfo");
             string output = "";
             if (file.Exists)
             {
@@ -48,6 +49,7 @@ namespace lab13
     {
         public static void DirInfo(DirectoryInfo dir)
         {
+            BASLog.Actwrite("DirInfo");
             string output = "";
             if (dir.Exists)
             {

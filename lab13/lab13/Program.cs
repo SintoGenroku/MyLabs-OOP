@@ -17,7 +17,15 @@ namespace lab13
             string dirPath = file.DirectoryName;    
             DirectoryInfo dir = new DirectoryInfo(dirPath);
 
-            BASFileManager drive = new BASFileManager(@"D:\");
+            BASFileManager drive = new BASFileManager(@"D:\MyPy");
+            drive.FileManager(@"D:\MyPy");
+            BASFileManager.CreateDirInspect();
+            BASFileManager.CreateDirFiles();
+            BASFileManager.NewFileDirInfo();
+            BASFileManager.DiskInfo();
+ 
+
+
         }
     }
 }

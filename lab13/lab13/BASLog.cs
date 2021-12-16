@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace lab13
 {
@@ -18,6 +16,7 @@ namespace lab13
                 using (StreamWriter sw = new StreamWriter(logPath, true, System.Text.Encoding.Default))
                 {
                     sw.WriteLine(buff);
+                    sw.Close();
                 }
             }
             catch (Exception e)
@@ -25,6 +24,49 @@ namespace lab13
                 Console.WriteLine(e.Message);
             }
         }
-        
+
+        public static void Actwrite(string action)
+        {
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(logPath, true, System.Text.Encoding.Default))
+                {
+                    sw.WriteLine($"action: {action};\t date: {DateTime.Now}");
+                    sw.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public static string Read()
+        {
+            var Reader = new StreamReader(logPath);
+            string line = Reader.ReadToEnd();
+
+            return line;
+        }
+
+        public static List<string> Find(DateTime date)
+        {
+            string data = Read();
+            List<string> result = new List<string>();
+
+            foreach (var field in data.Split('\n').Where(val => val != ""))
+            {
+                var splitArr = field.Split(' ');
+                string dateStr = splitArr[splitArr.Length - 1];
+                var fielddate = DateTime.Parse(dateStr);
+                if (fielddate < date)
+                {
+                    result.Add(field);
+                }
+            }
+
+            return result;
+        }
+
     }
 }
