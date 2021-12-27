@@ -13,8 +13,8 @@ namespace lab15
     class Information
     {
         static string objlocker = "null";
-        private static StreamWriter writer1 = new StreamWriter(@"./even-odd-even-odd.txt");
-        private static StreamWriter writer2 = new StreamWriter(@"./even-odd.txt");
+        private static StreamWriter writer1 = new StreamWriter(@"D:\info\even-odd-even-odd.txt");
+        private static StreamWriter writer2 = new StreamWriter(@"D:\info\even-odd.txt");
         public static void ProcInfo()
         {
             foreach (Process process in Process.GetProcesses())
