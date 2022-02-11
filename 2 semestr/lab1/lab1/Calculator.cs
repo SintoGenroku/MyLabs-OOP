@@ -53,14 +53,12 @@ namespace lab1
 
         public void OperationIdentify(string op) 
         {
-            MessageBox.Show("switch");
             switch (op)
             {
                 case "sin":
                     operation = Sinus;
                     break;
                 case "cos":
-                    MessageBox.Show("it must be cos");
                     operation = Cosinus;
                     break;
                 case "tan":
@@ -70,7 +68,6 @@ namespace lab1
                     operation = Catangence;
                     break;
                 case "√":
-                    MessageBox.Show("it must be square root");
                     operation = SquareRoot;
                     break;
                 case "∛":
