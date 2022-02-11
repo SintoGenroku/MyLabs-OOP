@@ -21,16 +21,6 @@ namespace lab1
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button18_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
 
         private void NumberButtons_Click(object sender, EventArgs e)
@@ -85,36 +75,10 @@ namespace lab1
                 double.TryParse(textBox1.Text, out _number);
                 MessageBox.Show($"saved number: {_number}");
                 textBox1.Text += operation.Text;
+                MessageBox.Show($"{Math.Pow(_number, 2)}");
             }
-
-            calc.OperationIdentify(textBox1.Text);
-            /*switch (operation.Text)
-            {
-                case "sin":
-                    calc.operation =calc.Sinus;
-                    break;
-                case "cos":
-                    //calc.operation = calc.Cosinus;
-                    break;
-                case "tan":
-                    //calc.operation = calc.Tangence;
-                    break;
-                case "ctg":
-                    calc.operation = calc.Catangence;
-                    break;
-                case "√":
-                    calc.operation = calc.SquareRoot;
-                    break;
-                case "∛":
-                    calc.operation = calc.CubeRoot;
-                    break;
-                case "^2":
-                    calc.operation = calc.SecDegree; 
-                    break;
-                case "^3":
-                    calc.operation = calc.ThirdDegree; 
-                    break;
-            }*/
+            calc.OperationIdentify(operation.Text);
+            
         }
 
         private void EqualButton_Click(object sender, EventArgs e)
@@ -136,7 +100,7 @@ namespace lab1
 
         private void DownloadButton_Click(object sender, EventArgs e)
         {
-            
+            textBox1.Text = calc.DownloadResult();
         }
     }
 }

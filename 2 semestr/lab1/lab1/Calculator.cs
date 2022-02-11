@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using System.Windows.Forms;
 
 namespace lab1
 {
@@ -11,7 +12,7 @@ namespace lab1
         public Operation operation;
         public string Path = @"D:\MyRepos\MyLabs-OOP\2 semestr\lab1";
         public double Awnser { get; set; }
-        public double FromFile { 
+        public string FromFile { 
             get 
             {
                 return _fromfile; 
@@ -21,11 +22,11 @@ namespace lab1
                 FromFile = _fromfile; 
             }
         }
-        private double _fromfile;
+        private string _fromfile;
 
         public Calculator()
         {
-            _fromfile = 0;
+            _fromfile = "0";
             Awnser = 0;
             operation = Sinus;
         }
@@ -39,24 +40,27 @@ namespace lab1
             }
         
         }
-        new public void DownloadResult()
+        new public string DownloadResult()
         {
             using (FileStream fstream = File.OpenRead($@"{Path}\text.txt"))
             {
                 byte[] array = new byte[fstream.Length];
                 fstream.Read(array, 0, array.Length);
-                double.TryParse(Encoding.Default.GetString(array), out _fromfile);
+                _fromfile = Encoding.Default.GetString(array);
+                return _fromfile;
             }
         }
 
         public void OperationIdentify(string op) 
         {
+            MessageBox.Show("switch");
             switch (op)
             {
                 case "sin":
                     operation = Sinus;
                     break;
                 case "cos":
+                    MessageBox.Show("it must be cos");
                     operation = Cosinus;
                     break;
                 case "tan":
@@ -66,6 +70,7 @@ namespace lab1
                     operation = Catangence;
                     break;
                 case "√":
+                    MessageBox.Show("it must be square root");
                     operation = SquareRoot;
                     break;
                 case "∛":
