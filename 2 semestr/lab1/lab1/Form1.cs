@@ -18,7 +18,7 @@ namespace lab1
             _toSave = false;
             _isOperationChoosed = false;
             _buffer = "0";
-            _doubleclick = 1;
+            _doubleclick = 0;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -81,6 +81,7 @@ namespace lab1
 
         private void OperationButton_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("work");
             Button operation = (Button)sender;
             calc.OperationIdentify(operation.Text);
             _isOperationChoosed = true;
@@ -127,14 +128,15 @@ namespace lab1
         }
         private void PostOperation_Click(object sender, EventArgs e)
         {
+
             Button button = (Button)sender;
             textBox1.Text = textBox1.Text.Insert(_buffer.Length, button.Text);
         }
 
         private void Button1_DoubleClick(object sender, EventArgs e)
         {
-            _doubleclick = ~ _doubleclick;
-            if(_doubleclick == 1)
+            _doubleclick +=1;
+            if(_doubleclick % 2 == 1)
             {
                 MessageBox.Show("DDDDouble cliccckk");
             }

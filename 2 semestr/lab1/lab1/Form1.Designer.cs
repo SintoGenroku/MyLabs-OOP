@@ -69,6 +69,7 @@ namespace lab1
             this.CubeSqrButton.Text = "∛";
             this.CubeSqrButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.CubeSqrButton.UseVisualStyleBackColor = false;
+            this.CubeSqrButton.Click += new System.EventHandler(this.OperationButton_Click);
             this.CubeSqrButton.Click += new System.EventHandler(this.PreOperation_Click);
             // 
             // ButtonOne
@@ -223,6 +224,7 @@ namespace lab1
             this.SqrButton.TabIndex = 13;
             this.SqrButton.Text = "√";
             this.SqrButton.UseVisualStyleBackColor = false;
+            this.SqrButton.Click += new System.EventHandler(this.OperationButton_Click);
             this.SqrButton.Click += new System.EventHandler(this.PreOperation_Click);
             // 
             // button14
@@ -249,6 +251,7 @@ namespace lab1
             this.CtgButton.TabIndex = 15;
             this.CtgButton.Text = "ctg";
             this.CtgButton.UseVisualStyleBackColor = false;
+            this.CtgButton.Click += new System.EventHandler(this.OperationButton_Click);
             this.CtgButton.Click += new System.EventHandler(this.PreOperation_Click);
             // 
             // TanButton
@@ -263,6 +266,7 @@ namespace lab1
             this.TanButton.Text = "tan";
             this.TanButton.UseVisualStyleBackColor = false;
             this.TanButton.Click += new System.EventHandler(this.OperationButton_Click);
+            this.TanButton.Click += new System.EventHandler(this.OperationButton_Click);
             // 
             // CosButton
             // 
@@ -274,7 +278,8 @@ namespace lab1
             this.CosButton.Size = new System.Drawing.Size(75, 75);
             this.CosButton.TabIndex = 17;
             this.CosButton.Text = "cos";
-            this.CosButton.UseVisualStyleBackColor = false;
+            this.CosButton.UseVisualStyleBackColor = false; 
+            this.CosButton.Click += new System.EventHandler(this.OperationButton_Click);
             this.CosButton.Click += new System.EventHandler(this.OperationButton_Click);
             // 
             // SinButton
@@ -288,6 +293,7 @@ namespace lab1
             this.SinButton.TabIndex = 18;
             this.SinButton.Text = "sin";
             this.SinButton.UseVisualStyleBackColor = false;
+            this.SinButton.Click += new System.EventHandler(this.OperationButton_Click);
             this.SinButton.Click += new System.EventHandler(this.OperationButton_Click);
             // 
             // button19
@@ -330,6 +336,7 @@ namespace lab1
             this.SecDegButton.Text = "^2";
             this.SecDegButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.SecDegButton.UseVisualStyleBackColor = false;
+            this.SecDegButton.Click += new System.EventHandler(this.OperationButton_Click);
             this.SecDegButton.Click += new System.EventHandler(this.PostOperation_Click);
             // 
             // ThirdDegButton
@@ -344,6 +351,7 @@ namespace lab1
             this.ThirdDegButton.Text = "^3";
             this.ThirdDegButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.ThirdDegButton.UseVisualStyleBackColor = false;
+            this.ThirdDegButton.Click += new System.EventHandler(this.OperationButton_Click);
             this.ThirdDegButton.Click += new System.EventHandler(this.PostOperation_Click);
             // 
             // Save
