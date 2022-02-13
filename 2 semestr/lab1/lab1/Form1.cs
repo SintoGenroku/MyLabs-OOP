@@ -42,6 +42,7 @@ namespace lab1
                 }
                 else
                 {
+                    
                     textBox1.Text += numberButton.Text;
                     _buffer += numberButton.Text;
                 }
@@ -125,6 +126,7 @@ namespace lab1
         { 
             Button button = (Button)sender;
             textBox1.Text = textBox1.Text.Insert(0, button.Text);
+            MessageBox.Show($"{button.Text}");
         }
         private void PostOperation_Click(object sender, EventArgs e)
         {
@@ -135,8 +137,8 @@ namespace lab1
 
         private void Button1_DoubleClick(object sender, EventArgs e)
         {
-            _doubleclick +=1;
-            if(_doubleclick % 2 == 1)
+            _doubleclick = ~ _doubleclick;
+            if(_doubleclick == 0)
             {
                 MessageBox.Show("DDDDouble cliccckk");
             }

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace lab1
 {
@@ -266,7 +267,7 @@ namespace lab1
             this.TanButton.Text = "tan";
             this.TanButton.UseVisualStyleBackColor = false;
             this.TanButton.Click += new System.EventHandler(this.OperationButton_Click);
-            this.TanButton.Click += new System.EventHandler(this.OperationButton_Click);
+            this.TanButton.Click += new System.EventHandler(this.PreOperation_Click);
             // 
             // CosButton
             // 
@@ -280,7 +281,7 @@ namespace lab1
             this.CosButton.Text = "cos";
             this.CosButton.UseVisualStyleBackColor = false; 
             this.CosButton.Click += new System.EventHandler(this.OperationButton_Click);
-            this.CosButton.Click += new System.EventHandler(this.OperationButton_Click);
+            this.CosButton.Click += new System.EventHandler(this.PreOperation_Click);
             // 
             // SinButton
             // 
@@ -294,7 +295,7 @@ namespace lab1
             this.SinButton.Text = "sin";
             this.SinButton.UseVisualStyleBackColor = false;
             this.SinButton.Click += new System.EventHandler(this.OperationButton_Click);
-            this.SinButton.Click += new System.EventHandler(this.OperationButton_Click);
+            this.SinButton.Click += new System.EventHandler(this.PreOperation_Click);
             // 
             // button19
             // 
@@ -321,7 +322,6 @@ namespace lab1
             this.button20.Text = "-";
             this.button20.UseVisualStyleBackColor = false;
             this.button20.Click += new System.EventHandler(this.MinusButton_Click);
-            this.button20.DoubleClick += new System.EventHandler(this.Button1_DoubleClick);
 
             // 
             // SecDegButton
@@ -386,7 +386,7 @@ namespace lab1
             this.button1.TabIndex = 25;
             this.button1.Text = "Double Click";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.DoubleClick += new System.EventHandler(this.Button1_DoubleClick);
+            this.button1.Click += new System.EventHandler(this.Button1_DoubleClick);
             // 
             // Form1
             // 
