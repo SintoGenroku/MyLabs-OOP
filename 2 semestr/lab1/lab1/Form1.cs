@@ -82,7 +82,7 @@ namespace lab1
 
         private void OperationButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("work");
+
             Button operation = (Button)sender;
             calc.OperationIdentify(operation.Text);
             _isOperationChoosed = true;
@@ -126,7 +126,7 @@ namespace lab1
         { 
             Button button = (Button)sender;
             textBox1.Text = textBox1.Text.Insert(0, button.Text);
-            MessageBox.Show($"{button.Text}");
+           
         }
         private void PostOperation_Click(object sender, EventArgs e)
         {
