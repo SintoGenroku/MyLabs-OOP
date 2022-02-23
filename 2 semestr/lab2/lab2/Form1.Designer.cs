@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.FullName = new System.Windows.Forms.TextBox();
             this.AccCreationDate = new System.Windows.Forms.DateTimePicker();
             this.CommunicationServices = new System.Windows.Forms.GroupBox();
@@ -61,22 +62,37 @@
             this.label8 = new System.Windows.Forms.Label();
             this.OutputBox = new System.Windows.Forms.RichTextBox();
             this.ClearOutputBox = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.ToolsAboutButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.SortTypeButton = new System.Windows.Forms.ToolStripSplitButton();
+            this.поДатеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.поТипуВкладаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.SaveSearchResults = new System.Windows.Forms.ToolStripButton();
             this.CommunicationServices.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CashTrackBar)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // FullName
             // 
-            this.FullName.Location = new System.Drawing.Point(15, 97);
+            this.FullName.Location = new System.Drawing.Point(12, 122);
             this.FullName.Name = "FullName";
             this.FullName.Size = new System.Drawing.Size(300, 20);
             this.FullName.TabIndex = 0;
             // 
             // AccCreationDate
             // 
-            this.AccCreationDate.Location = new System.Drawing.Point(331, 97);
+            this.AccCreationDate.Location = new System.Drawing.Point(355, 122);
             this.AccCreationDate.Name = "AccCreationDate";
             this.AccCreationDate.Size = new System.Drawing.Size(200, 20);
             this.AccCreationDate.TabIndex = 2;
@@ -85,7 +101,7 @@
             // 
             this.CommunicationServices.Controls.Add(this.NetBankingCheckBox);
             this.CommunicationServices.Controls.Add(this.SMSCheckBox);
-            this.CommunicationServices.Location = new System.Drawing.Point(351, 235);
+            this.CommunicationServices.Location = new System.Drawing.Point(375, 260);
             this.CommunicationServices.Name = "CommunicationServices";
             this.CommunicationServices.Size = new System.Drawing.Size(200, 73);
             this.CommunicationServices.TabIndex = 8;
@@ -114,7 +130,7 @@
             // 
             // BirthDate
             // 
-            this.BirthDate.Location = new System.Drawing.Point(15, 146);
+            this.BirthDate.Location = new System.Drawing.Point(12, 171);
             this.BirthDate.Name = "BirthDate";
             this.BirthDate.Size = new System.Drawing.Size(200, 20);
             this.BirthDate.TabIndex = 9;
@@ -124,7 +140,7 @@
             // RegistrationButton
             // 
             this.RegistrationButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.RegistrationButton.Location = new System.Drawing.Point(591, 269);
+            this.RegistrationButton.Location = new System.Drawing.Point(615, 294);
             this.RegistrationButton.Name = "RegistrationButton";
             this.RegistrationButton.Size = new System.Drawing.Size(186, 30);
             this.RegistrationButton.TabIndex = 10;
@@ -137,7 +153,7 @@
             this.panel1.Controls.Add(this.ShortTermType);
             this.panel1.Controls.Add(this.LongTermType);
             this.panel1.Controls.Add(this.PerpetualType);
-            this.panel1.Location = new System.Drawing.Point(588, 97);
+            this.panel1.Location = new System.Drawing.Point(612, 122);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(212, 81);
             this.panel1.TabIndex = 11;
@@ -180,7 +196,7 @@
             // 
             this.panel2.Controls.Add(this.radioButton8);
             this.panel2.Controls.Add(this.radioButton9);
-            this.panel2.Location = new System.Drawing.Point(588, 180);
+            this.panel2.Location = new System.Drawing.Point(612, 205);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(212, 56);
             this.panel2.TabIndex = 12;
@@ -211,7 +227,7 @@
             // 
             this.ContributionTypes.AutoSize = true;
             this.ContributionTypes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ContributionTypes.Location = new System.Drawing.Point(587, 78);
+            this.ContributionTypes.Location = new System.Drawing.Point(611, 103);
             this.ContributionTypes.Name = "ContributionTypes";
             this.ContributionTypes.Size = new System.Drawing.Size(98, 20);
             this.ContributionTypes.TabIndex = 20;
@@ -221,7 +237,7 @@
             // 
             this.LabelFullname.AutoSize = true;
             this.LabelFullname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.LabelFullname.Location = new System.Drawing.Point(14, 77);
+            this.LabelFullname.Location = new System.Drawing.Point(11, 102);
             this.LabelFullname.Name = "LabelFullname";
             this.LabelFullname.Size = new System.Drawing.Size(47, 20);
             this.LabelFullname.TabIndex = 21;
@@ -231,7 +247,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(288, 9);
+            this.label1.Location = new System.Drawing.Point(298, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(254, 29);
             this.label1.TabIndex = 22;
@@ -241,7 +257,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(260, 38);
+            this.label2.Location = new System.Drawing.Point(270, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(319, 24);
             this.label2.TabIndex = 23;
@@ -251,7 +267,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(14, 123);
+            this.label3.Location = new System.Drawing.Point(11, 148);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 20);
             this.label3.TabIndex = 24;
@@ -259,7 +275,7 @@
             // 
             // PassportInfo
             // 
-            this.PassportInfo.Location = new System.Drawing.Point(15, 241);
+            this.PassportInfo.Location = new System.Drawing.Point(12, 266);
             this.PassportInfo.Margin = new System.Windows.Forms.Padding(2);
             this.PassportInfo.Name = "PassportInfo";
             this.PassportInfo.Size = new System.Drawing.Size(300, 20);
@@ -269,7 +285,7 @@
             // 
             this.Pasport.AutoSize = true;
             this.Pasport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.Pasport.Location = new System.Drawing.Point(98, 192);
+            this.Pasport.Location = new System.Drawing.Point(95, 217);
             this.Pasport.Name = "Pasport";
             this.Pasport.Size = new System.Drawing.Size(194, 24);
             this.Pasport.TabIndex = 26;
@@ -277,7 +293,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(651, 392);
+            this.SaveButton.Location = new System.Drawing.Point(726, 417);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(126, 23);
             this.SaveButton.TabIndex = 27;
@@ -287,7 +303,7 @@
             // 
             // DownloadButton
             // 
-            this.DownloadButton.Location = new System.Drawing.Point(651, 421);
+            this.DownloadButton.Location = new System.Drawing.Point(726, 446);
             this.DownloadButton.Name = "DownloadButton";
             this.DownloadButton.Size = new System.Drawing.Size(126, 23);
             this.DownloadButton.TabIndex = 28;
@@ -299,7 +315,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(14, 219);
+            this.label4.Location = new System.Drawing.Point(11, 244);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(134, 20);
             this.label4.TabIndex = 30;
@@ -309,7 +325,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.Location = new System.Drawing.Point(14, 269);
+            this.label5.Location = new System.Drawing.Point(11, 294);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 20);
             this.label5.TabIndex = 31;
@@ -317,7 +333,7 @@
             // 
             // Citizenship
             // 
-            this.Citizenship.Location = new System.Drawing.Point(15, 288);
+            this.Citizenship.Location = new System.Drawing.Point(12, 313);
             this.Citizenship.Margin = new System.Windows.Forms.Padding(2);
             this.Citizenship.Name = "Citizenship";
             this.Citizenship.Size = new System.Drawing.Size(300, 20);
@@ -327,18 +343,17 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(347, 125);
+            this.label6.Location = new System.Drawing.Point(371, 150);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(161, 20);
             this.label6.TabIndex = 33;
             this.label6.Text = "Сумма вклада, USD";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // Cash
             // 
             this.Cash.Enabled = false;
             this.Cash.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.Cash.Location = new System.Drawing.Point(351, 155);
+            this.Cash.Location = new System.Drawing.Point(375, 180);
             this.Cash.Margin = new System.Windows.Forms.Padding(2);
             this.Cash.Name = "Cash";
             this.Cash.Size = new System.Drawing.Size(70, 20);
@@ -347,7 +362,7 @@
             // 
             // CashTrackBar
             // 
-            this.CashTrackBar.Location = new System.Drawing.Point(331, 179);
+            this.CashTrackBar.Location = new System.Drawing.Point(355, 204);
             this.CashTrackBar.Margin = new System.Windows.Forms.Padding(2);
             this.CashTrackBar.Maximum = 1000000;
             this.CashTrackBar.Minimum = 1000;
@@ -361,18 +376,18 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            this.label7.Location = new System.Drawing.Point(426, 159);
+            this.label7.Location = new System.Drawing.Point(450, 184);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 36;
             this.label7.Text = " USD";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+ 
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label8.Location = new System.Drawing.Point(331, 77);
+            this.label8.Location = new System.Drawing.Point(355, 102);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(148, 20);
             this.label8.TabIndex = 37;
@@ -380,16 +395,16 @@
             // 
             // OutputBox
             // 
-            this.OutputBox.Location = new System.Drawing.Point(15, 319);
+            this.OutputBox.Location = new System.Drawing.Point(12, 344);
             this.OutputBox.Name = "OutputBox";
-            this.OutputBox.Size = new System.Drawing.Size(630, 125);
+            this.OutputBox.Size = new System.Drawing.Size(708, 125);
             this.OutputBox.TabIndex = 38;
             this.OutputBox.Text = "";
             // 
             // ClearOutputBox
             // 
             this.ClearOutputBox.BackColor = System.Drawing.Color.Salmon;
-            this.ClearOutputBox.Location = new System.Drawing.Point(651, 319);
+            this.ClearOutputBox.Location = new System.Drawing.Point(726, 344);
             this.ClearOutputBox.Name = "ClearOutputBox";
             this.ClearOutputBox.Size = new System.Drawing.Size(75, 23);
             this.ClearOutputBox.TabIndex = 39;
@@ -397,12 +412,128 @@
             this.ClearOutputBox.UseVisualStyleBackColor = false;
             this.ClearOutputBox.Click += new System.EventHandler(this.ClearOutputBox_Click);
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolsAboutButton,
+            this.toolStripSeparator1,
+            this.toolStripButton2,
+            this.toolStripSeparator2,
+            this.SortTypeButton,
+            this.toolStripSeparator3,
+            this.toolStripButton4,
+            this.toolStripSeparator4,
+            this.toolStripButton5,
+            this.toolStripSeparator5,
+            this.SaveSearchResults});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(864, 25);
+            this.toolStrip1.TabIndex = 40;
+            this.toolStrip1.Text = "6";
+            // 
+            // ToolsAboutButton
+            // 
+            this.ToolsAboutButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ToolsAboutButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.ToolsAboutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolsAboutButton.Name = "ToolsAboutButton";
+            this.ToolsAboutButton.Size = new System.Drawing.Size(86, 22);
+            this.ToolsAboutButton.Text = "О программе";
+            this.ToolsAboutButton.Click += new System.EventHandler(this.ToolsAboutButton_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(46, 22);
+            this.toolStripButton2.Text = "Поиск";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // SortTypeButton
+            // 
+            this.SortTypeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.SortTypeButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.поДатеToolStripMenuItem,
+            this.поТипуВкладаToolStripMenuItem});
+            this.SortTypeButton.Image = ((System.Drawing.Image)(resources.GetObject("SortTypeButton.Image")));
+            this.SortTypeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SortTypeButton.Name = "SortTypeButton";
+            this.SortTypeButton.Size = new System.Drawing.Size(89, 22);
+            this.SortTypeButton.Text = "Сортировка";
+            // 
+            // поДатеToolStripMenuItem
+            // 
+            this.поДатеToolStripMenuItem.Name = "поДатеToolStripMenuItem";
+            this.поДатеToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.поДатеToolStripMenuItem.Text = "по дате";
+            // 
+            // поТипуВкладаToolStripMenuItem
+            // 
+            this.поТипуВкладаToolStripMenuItem.Name = "поТипуВкладаToolStripMenuItem";
+            this.поТипуВкладаToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.поТипуВкладаToolStripMenuItem.Text = "по типу вклада";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(63, 22);
+            this.toolStripButton4.Text = "Очистить";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(55, 22);
+            this.toolStripButton5.Text = "Удалить";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // SaveSearchResults
+            // 
+            this.SaveSearchResults.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.SaveSearchResults.Image = ((System.Drawing.Image)(resources.GetObject("SaveSearchResults.Image")));
+            this.SaveSearchResults.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SaveSearchResults.Name = "SaveSearchResults";
+            this.SaveSearchResults.Size = new System.Drawing.Size(70, 22);
+            this.SaveSearchResults.Text = "Сохранить";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(864, 481);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.ClearOutputBox);
             this.Controls.Add(this.OutputBox);
             this.Controls.Add(this.label8);
@@ -441,6 +572,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CashTrackBar)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -481,6 +614,20 @@
         public System.Windows.Forms.Label label8;
         private System.Windows.Forms.RichTextBox OutputBox;
         private System.Windows.Forms.Button ClearOutputBox;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton ToolsAboutButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton SaveSearchResults;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSplitButton SortTypeButton;
+        private System.Windows.Forms.ToolStripMenuItem поДатеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem поТипуВкладаToolStripMenuItem;
     }
 }
 

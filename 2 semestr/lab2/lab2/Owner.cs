@@ -1,17 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace lab2
-{   
+{
     [Serializable]
     public class Owner
     {
         public BankAccount bankAccount;
         public DateTime birthday;
 
+
+        [Required]
         public string fullname;
         public string _passport;
         public string nation;

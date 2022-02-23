@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace lab2
 {
@@ -8,19 +10,14 @@ namespace lab2
     {
         private string _contribution;
         private string _interestRate;
-        private bool _contributionChanged;
-        private bool _interestRateChanged;
         private BankAccount bankAcc;
         private Owner user;
-        private List<string> CIScountries = new List<string> { "РБ", "рб", "РФ","рф","УКР","укр",};
         public List<Owner> UsersList { get; set; }
         private const string path = @"D:\2 course\2 sem\ООП\data.json";
        
         public Form1()
         {
             InitializeComponent();
-            _contributionChanged = false;
-            _interestRateChanged = false;
             UsersList = new List<Owner>();
         }
 
@@ -36,25 +33,28 @@ namespace lab2
 
         private void RegistrationButton_Click(object sender, EventArgs e)
         {
-            if (!CIScitizen())
-            {
-                MessageBox.Show("Банк работает только с гражданами Беларуси, России и Украины");
-            }
-            else if(_contributionChanged & _interestRateChanged)
-            {
 
-                bankAcc = new BankAccount(AccCreationDate.Value, Int32.Parse(Cash.Text), _contribution, _interestRate);
-                user = new Owner(bankAcc, BirthDate.Value, FullName.Text, PassportInfo.Text, Citizenship.Text, SMSCheckBox.Checked, NetBankingCheckBox.Checked);
-                Form2 userInfo = new Form2(user, bankAcc);
-                UsersList.Add(user);
-                FormCleaner();
-                userInfo.Show();
-                OutputBox.Text += user.ShowInfo();
-            }
+                UserValidator validator = new UserValidator(FullName.Text, PassportInfo.Text, Citizenship.Text, _contribution, _interestRate);
+                var results = new List<ValidationResult>();
+                var context = new ValidationContext(validator);
+            if (!Validator.TryValidateObject(validator, context, results, true))
+            {
+                    string err = "\tЧто-то пошло не так...\n\n";
+                    foreach (var error in results)
+                    {
+                        err += error.ErrorMessage + "\n";
+                    }
+                    MessageBox.Show(err);
+                }
             else
             {
-                MessageBox.Show("Выберите тип вклада");
+                bankAcc = new BankAccount(AccCreationDate.Value, Int32.Parse(Cash.Text), _contribution, _interestRate);
+                user = new Owner(bankAcc, BirthDate.Value, FullName.Text, PassportInfo.Text, Citizenship.Text, SMSCheckBox.Checked, NetBankingCheckBox.Checked);
+                FormCleaner();
+                OutputBox.Text += user.ShowInfo();
             }
+                
+
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -68,9 +68,7 @@ namespace lab2
             if(button.Checked)
             {
                 _contribution = button.Text;
-                _contributionChanged = true;
-            }
-            
+            }    
 
         }
 
@@ -80,18 +78,7 @@ namespace lab2
             if (button.Checked)
             {
                 _interestRate = button.Text;
-                _interestRateChanged = true;
             }
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void DownloadFromJson_Click(object sender, EventArgs e)
@@ -118,12 +105,6 @@ namespace lab2
             CashTrackBar.Value = CashTrackBar.Minimum;
             SMSCheckBox.Checked = false;
             NetBankingCheckBox.Checked = false;
-            _contributionChanged = false;
-            _interestRateChanged = false;
-        }
-
-        private void richTextBox2_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
@@ -132,10 +113,13 @@ namespace lab2
             OutputBox.Text = "";
         }
 
-        private bool CIScitizen()
-        {
 
-            return CIScountries.Contains(Citizenship.Text);
+        private void ToolsAboutButton_Click(object sender, EventArgs e)
+        {
+            FormAbout form = new FormAbout();
+            form.Show();
         }
+
+
     }
 }
