@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace lab2
 {
+    [Serializable]
     public class BankAccount
     {
         public string creationDate { get; set; }
-        //private int _bankId;
+        
         public int Cash { get; set; }
         public string ContributionType { get; set; }
         public string InterestRateType { get; set; }

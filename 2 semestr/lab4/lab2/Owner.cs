@@ -1,14 +1,12 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.Text.RegularExpressions;
+using lab2.Prototype;
 
 namespace lab2
 {
     [Serializable]
-    public class Owner
+    public class Owner : Prototype<Owner>
     {
-        
-
         public BankAccount bankAccount;
         public DateTime birthday;
 
@@ -23,6 +21,11 @@ namespace lab2
 
         public string SmsHelp;
         public string Netbanking;
+
+        public Owner()
+        {
+        }
+        
         public Owner(BankAccount bankAcc, DateTime bd, string fullname, string passport, string nation, bool sms, bool netbank)
         {   
             bankAccount = bankAcc;
@@ -35,6 +38,7 @@ namespace lab2
             SmsHelp = _haveSms ? "sms-оповещения подключены" : "sms-оповещения отключены";
             Netbanking = _haveNetbanking ? "Интернет банкинг подключен" : "Интернет Банкинг отключен";
         }
+
 
         public string ShowInfo()
         {

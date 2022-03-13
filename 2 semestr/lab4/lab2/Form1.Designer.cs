@@ -69,6 +69,7 @@
             this.SearchByFullname = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.FullnameToSearch = new System.Windows.Forms.ToolStripTextBox();
+            this.нАЙТИToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SearchByCash = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.CashSize = new System.Windows.Forms.ToolStripTextBox();
@@ -82,7 +83,11 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.SaveSearchResults = new System.Windows.Forms.ToolStripButton();
+            this.CloneButton = new System.Windows.Forms.Button();
+            this.BuilderUpdate = new System.Windows.Forms.Button();
             this.CommunicationServices.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -146,7 +151,7 @@
             // RegistrationButton
             // 
             this.RegistrationButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.RegistrationButton.Location = new System.Drawing.Point(615, 294);
+            this.RegistrationButton.Location = new System.Drawing.Point(638, 294);
             this.RegistrationButton.Name = "RegistrationButton";
             this.RegistrationButton.Size = new System.Drawing.Size(186, 30);
             this.RegistrationButton.TabIndex = 10;
@@ -298,7 +303,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(726, 417);
+            this.SaveButton.Location = new System.Drawing.Point(726, 34);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(126, 23);
             this.SaveButton.TabIndex = 27;
@@ -308,7 +313,7 @@
             // 
             // DownloadButton
             // 
-            this.DownloadButton.Location = new System.Drawing.Point(726, 446);
+            this.DownloadButton.Location = new System.Drawing.Point(726, 63);
             this.DownloadButton.Name = "DownloadButton";
             this.DownloadButton.Size = new System.Drawing.Size(126, 23);
             this.DownloadButton.TabIndex = 28;
@@ -408,7 +413,7 @@
             // ClearOutputBox
             // 
             this.ClearOutputBox.BackColor = System.Drawing.Color.Salmon;
-            this.ClearOutputBox.Location = new System.Drawing.Point(726, 344);
+            this.ClearOutputBox.Location = new System.Drawing.Point(726, 446);
             this.ClearOutputBox.Name = "ClearOutputBox";
             this.ClearOutputBox.Size = new System.Drawing.Size(75, 23);
             this.ClearOutputBox.TabIndex = 39;
@@ -427,6 +432,8 @@
             this.toolStripSeparator3,
             this.toolStripButton4,
             this.toolStripSeparator4,
+            this.toolStripButton5,
+            this.toolStripSeparator5,
             this.SaveSearchResults});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -466,9 +473,10 @@
             // 
             this.SearchByFullname.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTextBox1,
-            this.FullnameToSearch});
+            this.FullnameToSearch,
+            this.нАЙТИToolStripMenuItem});
             this.SearchByFullname.Name = "SearchByFullname";
-            this.SearchByFullname.Size = new System.Drawing.Size(180, 22);
+            this.SearchByFullname.Size = new System.Drawing.Size(140, 22);
             this.SearchByFullname.Text = "по ФИО";
             // 
             // toolStripTextBox1
@@ -487,13 +495,19 @@
             this.FullnameToSearch.Size = new System.Drawing.Size(200, 23);
             this.FullnameToSearch.TextChanged += new System.EventHandler(this.FullNameSearch);
             // 
+            // нАЙТИToolStripMenuItem
+            // 
+            this.нАЙТИToolStripMenuItem.Name = "нАЙТИToolStripMenuItem";
+            this.нАЙТИToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
+            this.нАЙТИToolStripMenuItem.Text = "НАЙТИ";
+            // 
             // SearchByCash
             // 
             this.SearchByCash.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTextBox2,
             this.CashSize});
             this.SearchByCash.Name = "SearchByCash";
-            this.SearchByCash.Size = new System.Drawing.Size(180, 22);
+            this.SearchByCash.Size = new System.Drawing.Size(140, 22);
             this.SearchByCash.Text = "по Балансу";
             // 
             // toolStripTextBox2
@@ -517,7 +531,7 @@
             this.SearchByContribution.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ContributionType});
             this.SearchByContribution.Name = "SearchByContribution";
-            this.SearchByContribution.Size = new System.Drawing.Size(180, 22);
+            this.SearchByContribution.Size = new System.Drawing.Size(140, 22);
             this.SearchByContribution.Text = "Типу вклада";
             // 
             // ContributionType
@@ -593,6 +607,20 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(55, 22);
+            this.toolStripButton5.Text = "Удалить";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
             // SaveSearchResults
             // 
             this.SaveSearchResults.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -603,12 +631,34 @@
             this.SaveSearchResults.Text = "Сохранить";
             this.SaveSearchResults.Click += new System.EventHandler(this.SaveSorted);
             // 
+            // CloneButton
+            // 
+            this.CloneButton.Location = new System.Drawing.Point(726, 344);
+            this.CloneButton.Name = "CloneButton";
+            this.CloneButton.Size = new System.Drawing.Size(44, 29);
+            this.CloneButton.TabIndex = 41;
+            this.CloneButton.Text = "Клон";
+            this.CloneButton.UseVisualStyleBackColor = true;
+            this.CloneButton.Click += new System.EventHandler(this.CloneButton_Click);
+            // 
+            // BuilderUpdate
+            // 
+            this.BuilderUpdate.Location = new System.Drawing.Point(728, 381);
+            this.BuilderUpdate.Name = "BuilderUpdate";
+            this.BuilderUpdate.Size = new System.Drawing.Size(95, 48);
+            this.BuilderUpdate.TabIndex = 42;
+            this.BuilderUpdate.Text = "Изменить последнего пользователя";
+            this.BuilderUpdate.UseVisualStyleBackColor = true;
+            this.BuilderUpdate.Click += new System.EventHandler(this.BuilderUpdate_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(864, 481);
+            this.Controls.Add(this.BuilderUpdate);
+            this.Controls.Add(this.CloneButton);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.ClearOutputBox);
             this.Controls.Add(this.OutputBox);
@@ -639,7 +689,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Банк Dai Deneg";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.CommunicationServices.ResumeLayout(false);
             this.CommunicationServices.PerformLayout();
@@ -696,7 +746,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton SaveSearchResults;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSplitButton SortTypeButton;
         private System.Windows.Forms.ToolStripMenuItem поДатеToolStripMenuItem;
@@ -707,10 +759,13 @@
         private System.Windows.Forms.ToolStripMenuItem SearchByContribution;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripTextBox FullnameToSearch;
+        private System.Windows.Forms.ToolStripMenuItem нАЙТИToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox ContributionType;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
         private System.Windows.Forms.ToolStripTextBox CashSize;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.Button CloneButton;
+        private System.Windows.Forms.Button BuilderUpdate;
     }
 }
 

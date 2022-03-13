@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace lab2
 {
-    public class BankAccount
+    [Serializable]
+    public abstract class BankAcc
     {
         public string creationDate { get; set; }
-        //private int _bankId;
+
         public int Cash { get; set; }
         public string ContributionType { get; set; }
         public string InterestRateType { get; set; }
 
 
-        public BankAccount(DateTime date, int cash, string contribution, string interestRate)
+        public BankAcc(DateTime date, int cash, string contribution, string interestRate)
         {
             creationDate = date.ToString();
             Cash = cash;
@@ -23,4 +24,11 @@ namespace lab2
             InterestRateType = interestRate;
         }
     }
+    public class CreditBankAcc : BankAcc
+    {
+        public CreditBankAcc(DateTime date, int cash, string contribution, string interestRate) : base(date, cash, contribution, interestRate)
+        {
+        }
+    }
+
 }

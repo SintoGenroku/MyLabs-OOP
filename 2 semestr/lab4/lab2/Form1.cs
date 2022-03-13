@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace lab2
 {
+    using S = SingletonSerializator;
     public partial class Form1 : Form
     {
         private string _contribution;
@@ -15,21 +16,14 @@ namespace lab2
         private Owner user;
         public List<Owner> UsersList { get; set; }
         public List<Owner> SortedUsersList { get; set; }
-        private const string path = @"D:\2 course\2 sem\ООП\data.json";
-        Regex regex = new Regex(@"\d{7}\w{1}\d{3}(PB|BA|BI)\d{1}");
-        Dictionary<string, string> people = new Dictionary<string, string>()
-        {
-            {"PB", "гражданин Республики Беларусь" },
-            {"BI", "лицо без гражданства" },
-            {"BA", " иностранный гражданин, постоянно проживающий в стране" },
-        };
-
+       
 
         public Form1()
         {
             InitializeComponent();
             SortedUsersList = new List<Owner>();
             UsersList = new List<Owner>();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -56,12 +50,9 @@ namespace lab2
             {
                 bankAcc = new BankAccount(AccCreationDate.Value, Int32.Parse(Cash.Text), _contribution, _interestRate);
                 user = new Owner(bankAcc, BirthDate.Value, FullName.Text, PassportInfo.Text, Citizenship.Text, SMSCheckBox.Checked, NetBankingCheckBox.Checked);
-                Match match = regex.Match(PassportInfo.Text);
-                MessageBox.Show($"Гражданский статус - {people[match.Groups[1].Value]}");
                 UsersList.Add(user);
                 FormCleaner();
                 OutputBox.Text += user.ShowInfo();
-                
             }
                 
 
@@ -91,10 +82,10 @@ namespace lab2
             }
         }
 
-        private void DownloadFromJson_Click(object sender, EventArgs e)
+        private async void DownloadFromJson_Click(object sender, EventArgs e)
         {
-           
-            UsersList = Serializator.FromJson(path);
+            var FileWriter = S.GetInstance();
+            UsersList = await FileWriter.FromJson();
             foreach(var user in UsersList)
             {
                 OutputBox.Text += user.ShowInfo();
@@ -103,7 +94,8 @@ namespace lab2
 
         private void SaveToJson_Click(object sender, EventArgs e)
         {
-            Serializator.ToJson(UsersList, path);
+            var FileWriter = S.GetInstance();
+            FileWriter.ToJson(UsersList);
         }
 
         private void FormCleaner()
@@ -206,7 +198,8 @@ namespace lab2
     
         private void SaveSorted(object sender, EventArgs e)
         {
-            Serializator.ToJson(SortedUsersList, path);
+            var FileWriter = S.GetInstance();
+            FileWriter.ToJson(SortedUsersList);
         }
 
         private void SortByDate(object sender, EventArgs e)
@@ -227,6 +220,44 @@ namespace lab2
                 MessageBox.Show("список пользователей пуст!");
             }
         }
-        
+
+        private void CloneButton_Click(object sender, EventArgs e)
+        {
+            if (UsersList.Any())
+            {
+                var Clone = UsersList.Last().DeepCopy();
+                Clone.fullname += "V 2.0";
+                MessageBox.Show(Clone.ShowInfo());
+            }
+            else
+            {
+                MessageBox.Show("Нету заригестрированных пользователей");
+            }
+            
+        }
+
+        private void BuilderUpdate_Click(object sender, EventArgs e)
+        {
+            if (UsersList.Count != 0) 
+            {
+                BuilderUpdate form = new BuilderUpdate(UsersList.Last());
+                form.ShowDialog();
+                form.FormClosed += ShowListUpdate;
+            }
+            else
+            {
+                MessageBox.Show("Нету зарегестрированных пользователей!");
+            }
+            
+        }
+
+        private void ShowListUpdate(object sender, FormClosedEventArgs e)
+        {
+            OutputBox.Text = "";
+            foreach (var user in UsersList)
+            {
+                OutputBox.Text += user.ShowInfo();
+            }
+        }
     }
 }

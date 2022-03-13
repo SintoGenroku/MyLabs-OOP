@@ -10,16 +10,17 @@ using System.Windows.Forms;
 
 namespace lab2
 {
-    public partial class Searcher : Form
+    public partial class FormAbout : Form
     {
-        public Searcher()
+        public FormAbout()
         {
             InitializeComponent();
         }
 
-        private void Searcher_Load(object sender, EventArgs e)
+        private void FormAbout_Load(object sender, EventArgs e) 
         {
 
         }
+
     }
 }
