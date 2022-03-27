@@ -49,4 +49,42 @@ namespace lab2
             return userInfo;
         }
     }
+    public class BaseOwner : Owner
+    {
+        public BaseOwner( BankAccount bankAcc, DateTime bd, string fullname, string passport, string nation, bool sms, bool netbank)
+    : base(bankAcc, bd, fullname, passport, nation, sms, netbank)
+        {
+            
+        }
+    }
+    public class VipOwner : Owner
+    {
+        public new string ShowInfo()
+        {
+            string userInfo = $"\nФИО: {fullname}\t Гражданство:{nation}";
+            userInfo += $"\tДата регистрации:{bankAccount.creationDate}\t Счёт:{bankAccount.Cash}\n";
+            userInfo += $"Тип вклада: {bankAccount.ContributionType}\t {SmsHelp}\t {Netbanking}\n Статус: VIP";
+
+            return userInfo;
+        }
+    }
+
+    abstract class OwnerDecorator : Owner 
+    {
+        protected Owner owner;
+        public OwnerDecorator(Owner owner, BankAccount bankAcc, DateTime bd, string fullname, string passport, string nation, bool sms, bool netbank) 
+            : base( bankAcc, bd, fullname, passport, nation, sms, netbank)
+        {
+            this.owner = owner;
+        }
+    }
+
+    class KnightOwner : OwnerDecorator
+    {
+        public KnightOwner(Owner o)
+            :base(o, o.bankAccount, o.birthday, "Mr. "+o.fullname, o._passport, o.nation, o._haveSms, o._haveNetbanking)
+        {
+
+        }
+    }
 }

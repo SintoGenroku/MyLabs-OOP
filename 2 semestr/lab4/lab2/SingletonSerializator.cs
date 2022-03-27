@@ -36,18 +36,7 @@ namespace lab2
             
             return JsonConvert.DeserializeObject<List<Owner>>(users);
         }
-      /*  private void DeserializeButton_Click(object sender, EventArgs e)
-        {
-            using var fs = new StreamReader(@"./data.json");
-            var data = fs.ReadToEnd();
-            var accounts = JsonConvert.DeserializeObject < List < Account»(data);
-            Bank.Accounts = accounts;
-            ResultTextBox.Text = "";
-            foreach (var item in Bank.Accounts)
-            {
-                ResultTextBox.Text += item.ToString();
-            }
-        }*/
+
     }
 
 }

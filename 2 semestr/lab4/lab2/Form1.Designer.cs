@@ -88,6 +88,11 @@
             this.SaveSearchResults = new System.Windows.Forms.ToolStripButton();
             this.CloneButton = new System.Windows.Forms.Button();
             this.BuilderUpdate = new System.Windows.Forms.Button();
+            this.ListOfUsers = new System.Windows.Forms.ListBox();
+            this.ChangeMemento = new System.Windows.Forms.Button();
+            this.BackToMemento = new System.Windows.Forms.Button();
+            this.NewCash = new System.Windows.Forms.MaskedTextBox();
+            this.MakeVip = new System.Windows.Forms.Button();
             this.CommunicationServices.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -97,7 +102,7 @@
             // 
             // FullName
             // 
-            this.FullName.Location = new System.Drawing.Point(12, 122);
+            this.FullName.Location = new System.Drawing.Point(13, 150);
             this.FullName.Name = "FullName";
             this.FullName.Size = new System.Drawing.Size(300, 20);
             this.FullName.TabIndex = 0;
@@ -142,7 +147,7 @@
             // 
             // BirthDate
             // 
-            this.BirthDate.Location = new System.Drawing.Point(12, 171);
+            this.BirthDate.Location = new System.Drawing.Point(13, 199);
             this.BirthDate.Name = "BirthDate";
             this.BirthDate.Size = new System.Drawing.Size(200, 20);
             this.BirthDate.TabIndex = 9;
@@ -247,7 +252,7 @@
             // 
             this.LabelFullname.AutoSize = true;
             this.LabelFullname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.LabelFullname.Location = new System.Drawing.Point(11, 102);
+            this.LabelFullname.Location = new System.Drawing.Point(12, 130);
             this.LabelFullname.Name = "LabelFullname";
             this.LabelFullname.Size = new System.Drawing.Size(47, 20);
             this.LabelFullname.TabIndex = 21;
@@ -277,7 +282,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(11, 148);
+            this.label3.Location = new System.Drawing.Point(12, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 20);
             this.label3.TabIndex = 24;
@@ -295,7 +300,7 @@
             // 
             this.Pasport.AutoSize = true;
             this.Pasport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.Pasport.Location = new System.Drawing.Point(95, 217);
+            this.Pasport.Location = new System.Drawing.Point(64, 220);
             this.Pasport.Name = "Pasport";
             this.Pasport.Size = new System.Drawing.Size(194, 24);
             this.Pasport.TabIndex = 26;
@@ -374,7 +379,7 @@
             // 
             this.CashTrackBar.Location = new System.Drawing.Point(355, 204);
             this.CashTrackBar.Margin = new System.Windows.Forms.Padding(2);
-            this.CashTrackBar.Maximum = 1000000;
+            this.CashTrackBar.Maximum = 10000;
             this.CashTrackBar.Minimum = 1000;
             this.CashTrackBar.Name = "CashTrackBar";
             this.CashTrackBar.Size = new System.Drawing.Size(200, 45);
@@ -565,7 +570,7 @@
             // поДатеToolStripMenuItem
             // 
             this.поДатеToolStripMenuItem.Name = "поДатеToolStripMenuItem";
-            this.поДатеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.поДатеToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.поДатеToolStripMenuItem.Text = "по дате";
             this.поДатеToolStripMenuItem.Click += new System.EventHandler(this.SortByDate);
             // 
@@ -574,7 +579,7 @@
             this.поТипуВкладаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripComboBox1});
             this.поТипуВкладаToolStripMenuItem.Name = "поТипуВкладаToolStripMenuItem";
-            this.поТипуВкладаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.поТипуВкладаToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.поТипуВкладаToolStripMenuItem.Text = "по типу вклада";
             this.поТипуВкладаToolStripMenuItem.Click += new System.EventHandler(this.ContributionToSerachChanged);
             // 
@@ -651,12 +656,66 @@
             this.BuilderUpdate.UseVisualStyleBackColor = true;
             this.BuilderUpdate.Click += new System.EventHandler(this.BuilderUpdate_Click);
             // 
+            // ListOfUsers
+            // 
+            this.ListOfUsers.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.ListOfUsers.FormattingEnabled = true;
+            this.ListOfUsers.Location = new System.Drawing.Point(12, 34);
+            this.ListOfUsers.Name = "ListOfUsers";
+            this.ListOfUsers.Size = new System.Drawing.Size(120, 82);
+            this.ListOfUsers.TabIndex = 43;
+            // 
+            // ChangeMemento
+            // 
+            this.ChangeMemento.Location = new System.Drawing.Point(138, 60);
+            this.ChangeMemento.Name = "ChangeMemento";
+            this.ChangeMemento.Size = new System.Drawing.Size(89, 24);
+            this.ChangeMemento.TabIndex = 44;
+            this.ChangeMemento.Text = "изменить счет";
+            this.ChangeMemento.UseVisualStyleBackColor = true;
+            this.ChangeMemento.Click += new System.EventHandler(this.ChangeMemento_Click);
+            // 
+            // BackToMemento
+            // 
+            this.BackToMemento.Location = new System.Drawing.Point(138, 82);
+            this.BackToMemento.Name = "BackToMemento";
+            this.BackToMemento.Size = new System.Drawing.Size(89, 24);
+            this.BackToMemento.TabIndex = 45;
+            this.BackToMemento.Text = "вернуть счет";
+            this.BackToMemento.UseVisualStyleBackColor = true;
+            this.BackToMemento.Click += new System.EventHandler(this.BackToMemento_Click);
+            // 
+            // NewCash
+            // 
+            this.NewCash.Location = new System.Drawing.Point(138, 34);
+            this.NewCash.Mask = "00000";
+            this.NewCash.Name = "NewCash";
+            this.NewCash.Size = new System.Drawing.Size(100, 20);
+            this.NewCash.TabIndex = 47;
+            this.NewCash.Text = "0";
+            this.NewCash.ValidatingType = typeof(int);
+            // 
+            // MakeVip
+            // 
+            this.MakeVip.Location = new System.Drawing.Point(138, 105);
+            this.MakeVip.Name = "MakeVip";
+            this.MakeVip.Size = new System.Drawing.Size(89, 23);
+            this.MakeVip.TabIndex = 49;
+            this.MakeVip.Text = "рыцарь";
+            this.MakeVip.UseVisualStyleBackColor = true;
+            this.MakeVip.Click += new System.EventHandler(this.MakeVip_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(864, 481);
+            this.Controls.Add(this.MakeVip);
+            this.Controls.Add(this.NewCash);
+            this.Controls.Add(this.BackToMemento);
+            this.Controls.Add(this.ChangeMemento);
+            this.Controls.Add(this.ListOfUsers);
             this.Controls.Add(this.BuilderUpdate);
             this.Controls.Add(this.CloneButton);
             this.Controls.Add(this.toolStrip1);
@@ -766,6 +825,11 @@
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.Button CloneButton;
         private System.Windows.Forms.Button BuilderUpdate;
+        private System.Windows.Forms.ListBox ListOfUsers;
+        private System.Windows.Forms.Button ChangeMemento;
+        private System.Windows.Forms.Button BackToMemento;
+        private System.Windows.Forms.MaskedTextBox NewCash;
+        private System.Windows.Forms.Button MakeVip;
     }
 }
 

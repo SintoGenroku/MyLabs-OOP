@@ -16,6 +16,7 @@ namespace lab2
         private Owner user;
         public List<Owner> UsersList { get; set; }
         public List<Owner> SortedUsersList { get; set; }
+        public CashHistory history = new CashHistory();
        
 
         public Form1()
@@ -49,10 +50,12 @@ namespace lab2
             else
             {
                 bankAcc = new BankAccount(AccCreationDate.Value, Int32.Parse(Cash.Text), _contribution, _interestRate);
-                user = new Owner(bankAcc, BirthDate.Value, FullName.Text, PassportInfo.Text, Citizenship.Text, SMSCheckBox.Checked, NetBankingCheckBox.Checked);
+                user = new BaseOwner(bankAcc, BirthDate.Value, FullName.Text, PassportInfo.Text, Citizenship.Text, SMSCheckBox.Checked, NetBankingCheckBox.Checked);
                 UsersList.Add(user);
                 FormCleaner();
                 OutputBox.Text += user.ShowInfo();
+                AddToList(user);
+                history.History.Push(user.bankAccount.SaveState());
             }
                 
 
@@ -88,7 +91,12 @@ namespace lab2
             UsersList = await FileWriter.FromJson();
             foreach(var user in UsersList)
             {
-                OutputBox.Text += user.ShowInfo();
+                
+                if(!ListOfUsers.Items.Contains(user.fullname))
+                {
+                    ListOfUsers.Items.Add(user.fullname);
+                    OutputBox.Text += user.ShowInfo();
+                }
             }
         }
 
@@ -253,11 +261,50 @@ namespace lab2
 
         private void ShowListUpdate(object sender, FormClosedEventArgs e)
         {
+            ShowUpdate();
+        }
+        private void ShowUpdate()
+        {
             OutputBox.Text = "";
             foreach (var user in UsersList)
             {
                 OutputBox.Text += user.ShowInfo();
             }
+        }
+
+        private void AddToList(Owner user)
+        {
+            ListOfUsers.Items.Add(user.fullname);
+        }
+
+        private void ChangeMemento_Click(object sender, EventArgs e)
+        {
+            var index = ListOfUsers.SelectedIndex;
+            var memento_user = UsersList.Where(x => x.fullname == ListOfUsers.Items[index].ToString()).FirstOrDefault();
+            memento_user.bankAccount.Cash = Int32.Parse(NewCash.Text);
+            history.History.Push(memento_user.bankAccount.SaveState());
+            foreach(var item in history.History)
+            {
+                item.Show();
+            }
+            ShowUpdate();
+        }
+
+        private void BackToMemento_Click(object sender, EventArgs e)
+        {
+            var index = ListOfUsers.SelectedIndex;
+            var memento_user = UsersList.Where(x => x.fullname == ListOfUsers.Items[index].ToString()).FirstOrDefault();
+            memento_user.bankAccount.RestoreState(history.History.Where(x => x.Id == memento_user.bankAccount.ID).LastOrDefault());
+            ShowUpdate();
+        }
+
+        private void MakeVip_Click(object sender, EventArgs e)
+        {
+            var index = ListOfUsers.SelectedIndex;
+            var knight_user = UsersList.Where(x => x.fullname == ListOfUsers.Items[index].ToString()).FirstOrDefault();
+            knight_user = new KnightOwner(knight_user);
+            MessageBox.Show(knight_user.ShowInfo());
+            ShowUpdate();
         }
     }
 }
