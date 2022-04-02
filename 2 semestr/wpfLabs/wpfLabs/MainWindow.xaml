@@ -1,0 +1,89 @@
+﻿<Window x:Class="wpfLabs.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:wpflabs="clr-namespace:wpfLabs" d:DataContext="{d:DesignInstance Type=wpflabs:ViewModel}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="1290"
+        Background="#2e2940"
+        Cursor="D:\MyRepos\MyLabs-OOP\2 semestr\wpfLabs\wpfLabs\minecraft.cur"
+        >
+    <Window.DataContext>
+        <wpflabs:ViewModel/>
+    </Window.DataContext>
+
+    <Grid ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Name="Menu" Height ="1*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+     
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="95*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            
+
+
+            <ComboBox x:Name="MenuLanguage" Grid.Column="1" Height="20" >
+                <ComboBoxItem>Ru</ComboBoxItem>
+                <ComboBoxItem>Eng</ComboBoxItem>
+            </ComboBox>
+            
+        </Grid>
+
+        <TextBlock 
+                Grid.Row="0" 
+                Text="{DynamicResource App_title}" 
+                Style="{DynamicResource ShopTitle}"
+            />
+        
+        <Grid Grid.Row="1" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Button 
+                        Grid.Column="0" 
+                        Content="{DynamicResource menu_button_All_Products}"
+                        Command="{Binding ChooseCommand}"
+                        CommandParameter="all"/>
+                <Button
+                        Grid.Column="1"
+                        Content="{DynamicResource menu_button_For_Men}"
+                        Command="{Binding ChooseCommand}"
+                        CommandParameter="men's clothing"/>
+                <Button
+                        Grid.Column="2"
+                        Content="{DynamicResource menu_button_For_Women}"
+                        Command="{Binding ChooseCommand}"
+                        CommandParameter="women's clothing"/>
+                <Button
+                        Grid.Column="3"
+                        Content="{DynamicResource menu_button_Jewelery}"
+                        Command="{Binding ChooseCommand}"
+                        CommandParameter="jewelery"/>
+                <Button
+                        Grid.Column="4"
+                        Content="{DynamicResource menu_button_Electronics}"
+                        Command="{Binding ChooseCommand}"
+                        CommandParameter="electronics"/>
+
+            </Grid>
+        </Grid>
+        <Frame x:Name="ProductsFrame" 
+               Grid.Row="2"
+               Content="{Binding CurrentPage}"
+               NavigationUIVisibility="Hidden">
+        </Frame>
+
+    </Grid>
+</Window>
