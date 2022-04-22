@@ -13,16 +13,15 @@
     
     <Page.Resources>
         <DataTemplate x:Key="ListTemplate">
-            <StackPanel Margin="5" Width="290"  Background="White" >
+            <StackPanel Margin="5" Width="320"  Background="White" >
                 <StackPanel Background="White" Orientation="Horizontal" HorizontalAlignment="Center">
                     <Image MaxHeight="200" MaxWidth="260" Source="{Binding Path=image}"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Background="#413861">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock FontSize="18" TextWrapping="Wrap" Width="200" Text="{Binding Path=title}" Margin="15, 0, 0, 0" Foreground="White"/>
-                        <TextBlock FontSize="16" Width="50" Text="{Binding Path=price}" Foreground="White">$</TextBlock>
-
+                        <TextBlock FontSize="18" TextWrapping="Wrap" Width="240" Text="{Binding Path=title}"  Padding="15,0" Foreground="White"/>
+                        <TextBlock FontSize="16" Width="60" Text="{Binding Path=price}" Foreground="White">$</TextBlock>
                     </StackPanel>
                     <TextBlock FontSize="16" Text="{Binding Path=category}" Margin="15, 20, 0, 0" Foreground="White"></TextBlock>
                 </StackPanel>
@@ -32,7 +31,7 @@
     <Grid>
 
         <ListBox x:Name="ProductsList" 
-                 Background="#2e2940"
+                 
                  BorderThickness="0"
                  ItemsSource="{Binding ProductsCategory}"
                  SelectedItem="{Binding Path=SelectedProduct}"             

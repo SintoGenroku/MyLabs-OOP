@@ -6,9 +6,10 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/TemplatesDictionary.xaml"/>
-                <ResourceDictionary Source="Resources/en-US-lang.xaml"/>
-                <ResourceDictionary Source="Resources/ru-RU-lang.xaml"/>
+                <ResourceDictionary Source="Resources/lightTheme.xaml"/>
+                <ResourceDictionary Source="Resources/lightTheme.xaml"/>
+                <ResourceDictionary Source="Resources/lang.en.xaml"/>
+                <ResourceDictionary Source="Resources/lang.ru.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 

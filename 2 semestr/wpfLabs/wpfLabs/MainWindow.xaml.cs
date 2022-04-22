@@ -1,19 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Resources;
-using System.Windows.Shapes;
 
 namespace wpfLabs
 {
@@ -22,76 +11,26 @@ namespace wpfLabs
     /// </summary>
     public partial class MainWindow : Window
     {
+        //private ICommand _langCommand;
         public MainWindow()
         {
             InitializeComponent();
             DataContext = new ViewModel();
-
-
         }
+/*        public ICommand LangCommand
+        {
+            get
+            {
+                return _langCommand ??
+                    (_langCommand = new CategoryCommand(obj =>
+                    {
+                        Resources.MergedDictionaries.Clear();
+                        Resources.MergedDictionaries.Add(Models.Resources.Languages[obj as string]);
+                    }
+                    ));
+            }
+        }
+*/
     }
 }
-    // that shit doesn't work and shouldn't be here, so fuck it
-    // ---------------------------------------------------------
-
-/* MenuLanguage.Visibility = Visibility.Hidden;
-           App.LanguageChanged += LanguageChanged;
-
-           CultureInfo currLang = App.Language;
-
-
-           //Заполняем меню смены языка:
-           MenuLanguage.Items.Clear();
-           foreach (var lang in App.Languages)
-           {
-               MenuItem menuLang = new MenuItem();
-               menuLang.Header = lang.DisplayName;
-               menuLang.Tag = lang;
-               menuLang.IsChecked = lang.Equals(currLang);
-               menuLang.Click += ChangeLanguageClick;
-               MenuLanguage.Items.Add(menuLang);
-           }
-    ------
-       private void LanguageChanged(Object sender, EventArgs e)
-       {
-           CultureInfo currLang = App.Language;
-
-           //Отмечаем нужный пункт смены языка как выбранный язык
-           foreach (MenuItem i in MenuLanguage.Items)
-           {
-               CultureInfo ci = i.Tag as CultureInfo;
-               i.IsChecked = ci != null && ci.Equals(currLang);
-
-           }
-       }
-       public int clickCount = 1;
-
-       private void ChangeLanguageClick(Object sender, EventArgs e)
-       {
-
-           MenuItem mi = sender as MenuItem;
-           if (mi != null)
-           {
-               CultureInfo lang = mi.Tag as CultureInfo;
-               if (lang != null)
-               {
-                   App.Language = lang;
-
-                   switch (clickCount)
-                   {
-                       case 1:
-
-                           Textvalue.Text = "Eng";
-                           ++clickCount;
-                           break;
-                       case 2:
-                           Textvalue.Text = "Ru";
-                           -—clickCount;
-                           break;
-
-                   }
-
-               }
-           }
-
-       }*/
+    

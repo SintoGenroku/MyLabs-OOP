@@ -8,5 +8,6 @@
     <v:String x:Key="menu_button_For_Women">Men's Clothing</v:String>
     <v:String x:Key="menu_button_Jewelery">Jewelery</v:String>
     <v:String x:Key="menu_button_Electronics">Electronics</v:String>
-    
+    <v:String x:Key="menu_button_ChangeLang">Change Language</v:String>
+
 </ResourceDictionary>

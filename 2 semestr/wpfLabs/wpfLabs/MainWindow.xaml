@@ -24,22 +24,28 @@
                 <ColumnDefinition Width="95*"/>
                 <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
-            
 
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-            <ComboBox x:Name="MenuLanguage" Grid.Column="1" Height="20" >
-                <ComboBoxItem>Ru</ComboBoxItem>
-                <ComboBoxItem>Eng</ComboBoxItem>
-            </ComboBox>
-            
+                <Button Grid.Row="0" x:Name="EngLang"  Content="{DynamicResource menu_button_ChangeLang}" FontSize="14" Style="{StaticResource LangButtons}" Background="#413861" Command="{Binding ChangeLanguage}"/>
+                <Button Grid.Row="1"  Content="Theme" FontSize="14" Style="{StaticResource LangButtons}" Background="#413861" Command="{Binding ChangeTheme}"/>
+                <CheckBox Grid.Row="2" Foreground="White" x:Name="DiasblerCheckBox">Disable</CheckBox>
+                
+            </Grid>
         </Grid>
 
+        
         <TextBlock 
                 Grid.Row="0" 
                 Text="{DynamicResource App_title}" 
                 Style="{DynamicResource ShopTitle}"
             />
-        
+
         <Grid Grid.Row="1" >
             <Grid>
                 <Grid.ColumnDefinitions>
